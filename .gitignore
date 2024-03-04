@@ -1,2 +1,13 @@
-Unity
-Unity/
+Library/
+Temp/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.dll
+*.pdb
+*.csproj
+*.unityproj
+*.tmp
+*.mp4
