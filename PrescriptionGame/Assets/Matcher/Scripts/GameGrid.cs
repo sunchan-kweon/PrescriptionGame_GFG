@@ -10,8 +10,8 @@ public class GameGrid : MonoBehaviour
     [SerializeField] BerryHolder holder;
     [SerializeField] BerryMover mover;
     GameObject[,] board;
-    public int width;
-    public int height;
+    [SerializeField] int width;
+    [SerializeField] int height;
     public GameGrid(int w, int h)
     {
         //Initialize the Board with size width, height. Height is at the bottom 0 is at the top.
@@ -23,8 +23,6 @@ public class GameGrid : MonoBehaviour
     private void Start()
     {
         //INITIAL SETUP FOR BOARD SIZE AND FILLING
-        setWidth(9);
-        setHeight(9);
         board = new GameObject[width, height];
         fillBoard(new int[] {0, 0});
     }
