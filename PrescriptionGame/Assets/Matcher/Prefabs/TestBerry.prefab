@@ -102,3 +102,4 @@ MonoBehaviour:
   id: 0
   incompatibility: 
   doesGravity: 1
+  numToMatch: 3

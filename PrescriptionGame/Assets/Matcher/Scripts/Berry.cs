@@ -11,18 +11,20 @@ public class Berry : MonoBehaviour
     //Ids of incompatible berries
     [SerializeField] int[] incompatibility;
     [SerializeField] bool doesGravity;
+    [SerializeField] int numToMatch;
 
     //No Gravity Constructor
-    public Berry(string n, string desc, int i, int[] incomp)
+    public Berry(string n, string desc, int i, int numM, int[] incomp)
     {
         name = n;
         description = desc;
         id = i;
         incompatibility = incomp;
+        numToMatch = numM;
         doesGravity = true;
     }
     //Constructor for if Gravity needs to be turned off - maybe future stuff.
-    public Berry(string n, string desc, int i, int[] incomp, bool dG) : this(n, desc, i, incomp)
+    public Berry(string n, string desc, int i, int numM, int[] incomp, bool dG) : this(n, desc, i, numM, incomp)
     {
         doesGravity = dG;
     }
