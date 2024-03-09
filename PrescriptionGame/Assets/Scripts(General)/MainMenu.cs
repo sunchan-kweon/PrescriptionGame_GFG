@@ -8,6 +8,11 @@ public class MainMenu : MonoBehaviour
     // public GameObject howtopanel;
     // public GameObject creditpanel;
     
+    public void ToTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
     public void ToPet()
     {
         SceneManager.LoadScene("Pet");
@@ -16,6 +21,16 @@ public class MainMenu : MonoBehaviour
     public void ToPuzzle()
     {
         SceneManager.LoadScene("Matcher");
+    }
+
+    public void ToSettings()
+    {
+        SceneManager.LoadScene("Settings");
+    }
+
+    public void ToInventory()
+    {
+        SceneManager.LoadScene("Inventory");
     }
 
     // public void Credits()

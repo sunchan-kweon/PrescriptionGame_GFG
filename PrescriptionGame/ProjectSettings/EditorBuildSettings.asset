@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 9e0c939e55585404ea13a55834014f39
+  - enabled: 1
     path: Assets/Scenes/Pet.unity
     guid: 0b9c0a7374ac4b94183955b4f71f2f58
+  - enabled: 1
+    path: Assets/Scenes/Inventory.unity
+    guid: 08980936d03c040e5aee07ec2d051805
   - enabled: 1
     path: Assets/Scenes/Matcher.unity
     guid: aeefdb0b8549ad24d999b0326d29f639
