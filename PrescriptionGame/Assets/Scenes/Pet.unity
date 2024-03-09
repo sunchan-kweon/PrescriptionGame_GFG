@@ -604,6 +604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pet: {fileID: 699360775}
+  needsController: {fileID: 699360773}
 --- !u!4 &629636482
 Transform:
   m_ObjectHideFlags: 0

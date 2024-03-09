@@ -7,7 +7,12 @@ public class PetUIController : MonoBehaviour
 {
     public Image foodImage;
 
-    public static PetUIController instance;
+    private void Start()
+    {
+        foodImage = GetComponent<Image>();
+    }
+
+    //public static PetUIController instance;
 
     /*private void Awake()
     {
@@ -17,9 +22,8 @@ public class PetUIController : MonoBehaviour
         }
     }*/
 
-    public void UpdateImages(int food)
+    public void UpdateFoodBar(float maxFood, float currentFood)
     {
-        //this.food = food;
-        foodImage.fillAmount = (float) food / 100;
+        foodImage.fillAmount = currentFood / maxFood;
     }
 }

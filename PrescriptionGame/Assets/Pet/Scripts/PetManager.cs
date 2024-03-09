@@ -6,6 +6,8 @@ public class PetManager : MonoBehaviour
 {
 
     public PetController pet;
+    public NeedsController needsController;
+
     void Start()
     {
         
@@ -16,4 +18,5 @@ public class PetManager : MonoBehaviour
     {
         
     }
+
 }

@@ -7,28 +7,37 @@ public class NeedsController : MonoBehaviour
 
     public int food;
     public int foodTickRate;
+
+    private PetUIController foodBar;
     
     public void Initialize(int food, int foodTickRate)
     {
         this.food = food;
         this.foodTickRate = foodTickRate;
-        PetUIController.instance.UpdateImages(food);
+        //PetUIController.instance.UpdateImages(food);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Start()
+    {
+        foodBar = GetComponentInChildren<PetUIController>();
+    }
+
+    public void Update()
     {
         if(TimingManager.gameHourTimer < 0)
         {
             ChangeFood(-foodTickRate);
-            PetUIController.instance.UpdateImages(food);
+            foodBar.UpdateFoodBar(100, food);
+            //PetUIController.instance.UpdateImages(food);
         }
     }
 
     public void ChangeFood(int amount)
     {
         food += amount;
-        if(food < 10)
+        
+
+        if (food < 10)
         {
             //PetController.Sad();
         } 
@@ -36,5 +45,7 @@ public class NeedsController : MonoBehaviour
         {
             food = 100;
         }
+
+        
     }
 }
