@@ -12,6 +12,7 @@ public class GameGrid : MonoBehaviour
     GameObject[,] board;
     [SerializeField] int width;
     [SerializeField] int height;
+    [SerializeField] int[] berries;
     public GameGrid(int w, int h)
     {
         //Initialize the Board with size width, height. Height is at the bottom 0 is at the top.
@@ -24,7 +25,7 @@ public class GameGrid : MonoBehaviour
     {
         //INITIAL SETUP FOR BOARD SIZE AND FILLING
         board = new GameObject[width, height];
-        fillBoard(new int[] {0, 0});
+        fillBoard(berries);
     }
 
     void fillBoard(int[] ids)
@@ -36,6 +37,7 @@ public class GameGrid : MonoBehaviour
                 if (board[x, y] == null)
                 {
                     board[x, y] = Instantiate(holder.getBerry(ids[Random.Range(0, ids.Length)]), new Vector3(50, 0f, 50), Quaternion.identity);
+                    board[x, y].transform.localScale = new Vector2(mover.getScale(), mover.getScale());
                 }
             }
         }
@@ -51,7 +53,15 @@ public class GameGrid : MonoBehaviour
             {
                 if (board[x, y] == null)
                 {
-                    
+                    for(int i = y - 1; i >= 0; i--)
+                    {
+                        if (board[x, i] != null)
+                        {
+                            board[x, y] = board[x, i];
+                            board[x, i] = null;
+                            continue;
+                        }
+                    }
                 }
             }
         }
@@ -66,13 +76,15 @@ public class GameGrid : MonoBehaviour
     }
 
     //Loc is an array that contains the x and y position on the board of which to be removed
-    GameObject[] removedDir(int[,] loc)
+    GameObject[] removeGroup(int[,] loc)
     {
         GameObject[] removed = new GameObject[loc.GetLength(0) + 1];
         for(int i = 0; i < loc.GetLength(0); i++)
         {
             removed[i] = remove(loc[i, 0], loc[i, 1]);
         }
+        gravity();
+        fillBoard(berries);
         return removed;
 
     }

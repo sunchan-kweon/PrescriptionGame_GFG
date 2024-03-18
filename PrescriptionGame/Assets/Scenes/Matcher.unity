@@ -1080,6 +1080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   container:
   - {fileID: 5244106762723275998, guid: 2d5aa9abae2aa82429f9df0a5ecb3f24, type: 3}
+  - {fileID: 1696590443865262167, guid: b3ae56cf2adaf674e960ada243cccc42, type: 3}
 --- !u!114 &1616609105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1094,8 +1095,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holder: {fileID: 1616609104}
   mover: {fileID: 1616609107}
-  width: 9
-  height: 9
+  width: 8
+  height: 10
 --- !u!4 &1616609106
 Transform:
   m_ObjectHideFlags: 0
@@ -1124,6 +1125,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 1616609105}
+  xScale: 0.58
+  yScale: 0.58
+  xOffset: 2
+  yOffset: 1.1
+  berryScale: 0.4
 --- !u!114 &1616609108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1137,7 +1143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   readytime: 3
-  countdowntime: 10
+  countdowntime: 250
   remainingtime: 90
   readyText: {fileID: 1987457290}
   countdownText: {fileID: 1721947453}

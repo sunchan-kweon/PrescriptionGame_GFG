@@ -6,8 +6,14 @@ public class BerryMover : MonoBehaviour
 {
 
     [SerializeField] GameGrid grid;
+    [SerializeField] float xScale;
+    [SerializeField] float yScale;
+    [SerializeField] float xOffset;
+    [SerializeField] float yOffset;
+    [SerializeField] float berryScale;
 
-    
+
+
     public void updateBoard()
     {
         for(int x = 0; x < grid.getWidth(); x++)
@@ -27,15 +33,20 @@ public class BerryMover : MonoBehaviour
 
     }
 
-    //Converts X from matrix to real space
-    int conX(int x)
+    public float getScale()
     {
-        return x;
+        return berryScale;
+    }
+
+    //Converts X from matrix to real space
+    float conX(int x)
+    {
+        return x*xScale + xOffset;
     }
     //Same for Y
-    int conY(int y)
+    float conY(int y)
     {
-        return y;
+        return y*yScale + yOffset;
     }
 
 }
