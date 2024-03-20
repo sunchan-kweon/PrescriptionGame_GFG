@@ -12,6 +12,9 @@ public class Berry : MonoBehaviour
     [SerializeField] int[] incompatibility;
     [SerializeField] bool doesGravity;
     [SerializeField] int numToMatch;
+    public int locX;
+    public int locY;
+    public bool added = false;
 
     //No Gravity Constructor
     public Berry(string n, string desc, int i, int numM, int[] incomp)
@@ -57,5 +60,21 @@ public class Berry : MonoBehaviour
     public int getNum2Match()
     {
         return numToMatch;
+    }
+
+    public void setPosition(int x, int y)
+    {
+        locX = x;
+        locY = y;
+    }
+
+    public int getX()
+    {
+        return locX;
+    }
+
+    public int getY()
+    {
+        return locY;
     }
 }

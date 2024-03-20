@@ -38,6 +38,8 @@ public class GameGrid : MonoBehaviour
                 {
                     board[x, y] = Instantiate(holder.getBerry(ids[Random.Range(0, ids.Length)]), new Vector3(50, 0f, 50), Quaternion.identity);
                     board[x, y].transform.localScale = new Vector2(mover.getScale(), mover.getScale());
+                    board[x, y].GetComponent<Berry>().locX = x;
+                    board[x, y].GetComponent<Berry>().locY = y;
                 }
             }
         }
@@ -58,8 +60,9 @@ public class GameGrid : MonoBehaviour
                         if (board[x, i] != null)
                         {
                             board[x, y] = board[x, i];
+                            board[x, y].GetComponent<Berry>().setPosition(x, y);
                             board[x, i] = null;
-                            continue;
+                            break;
                         }
                     }
                 }
@@ -67,21 +70,24 @@ public class GameGrid : MonoBehaviour
         }
     }
 
-    GameObject remove(int x, int y)
+    int remove(int x, int y)
     {
         //Remove berry from list and return what was removed
         GameObject removed = board[x, y];
+        int id = removed.GetComponent<Berry>().getId();
+        Destroy(removed);
         board[x, y] = null;
-        return removed;
+        return id;
     }
 
     //Loc is an array that contains the x and y position on the board of which to be removed
-    public GameObject[] removeGroup(int[,] loc)
+    //Method returns the ammount of each berry removed by index of ID.
+    public int[] removeGroup(int[,] loc)
     {
-        GameObject[] removed = new GameObject[loc.GetLength(0) + 1];
+        int[] removed = new int[berries.Length];
         for(int i = 0; i < loc.GetLength(0); i++)
         {
-            removed[i] = remove(loc[i, 0], loc[i, 1]);
+            removed[remove(loc[i, 0], loc[i, 1])]++;
         }
         gravity();
         fillBoard(berries);
@@ -114,5 +120,7 @@ public class GameGrid : MonoBehaviour
     {
         return board[x, y];
     }
+
+    
     
 }

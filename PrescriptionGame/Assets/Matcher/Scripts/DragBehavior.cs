@@ -7,11 +7,11 @@ public class DragBehavior : MonoBehaviour
 {
 
     //This script is on a collider that follows the mouse/finger when that is an option
-    [SerializeField]GameObject dragObject;
-    List<GameObject> dragged = new List<GameObject> ();
+    [SerializeField]List<GameObject> dragged = new List<GameObject> ();
     bool dragging = false;
     [SerializeField] GameGrid grid;
     [SerializeField] BerryMover mover;
+    [SerializeField] CircleCollider2D col;
     Vector3 mouseWorldPos;
     
 
@@ -19,67 +19,100 @@ public class DragBehavior : MonoBehaviour
     {
         mouseWorldPos.z = 0f;
         mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        dragObject.transform.position = mouseWorldPos;
+        transform.position = mouseWorldPos;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            onDown();
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            onUp();
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collider)
     {
         if (dragging)
         {
-            dragged.Add(collision.gameObject);
+            if(collider.gameObject.GetComponent<Berry>().added == false)
+            {
+                dragged.Add(collider.gameObject);
+                collider.gameObject.GetComponent<Berry>().added = true;
+            }
+            
         }
     }
 
     bool checkList()
     {
-        int prevId = dragged[0].GetComponent<Berry>().getId();
-        int count = 0;
-        int toMatch = dragged[0].GetComponent<Berry>().getNum2Match();
-
-        for(int i = 1; i < dragged.Count; i++)
+        if(dragged.Count > 0)
         {
-            count++;
-            if (prevId != dragged[i].GetComponent<Berry>().getId())
+            int prevId = dragged[0].GetComponent<Berry>().getId();
+            int count = 0;
+            int toMatch = dragged[0].GetComponent<Berry>().getNum2Match();
+
+            for (int i = 1; i < dragged.Count; i++)
             {
-                if(count != toMatch)
+                count++;
+                if (prevId != dragged[i].GetComponent<Berry>().getId())
                 {
-                    return false;
-                }
-                else
-                {
-                    prevId = dragged[i].GetComponent<Berry>().getId();
-                    count = 0;
-                    toMatch = dragged[i].GetComponent<Berry>().getNum2Match();
+                    if (count != toMatch)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        prevId = dragged[i].GetComponent<Berry>().getId();
+                        count = 0;
+                        toMatch = dragged[i].GetComponent<Berry>().getNum2Match();
+                    }
                 }
             }
+            count++;
+            if (count != toMatch)
+            {
+                return false;
+            }
+            return true;
         }
-        count++;
-        if (count != toMatch)
-        {
-            return false;
-        }
-        return true;
+        return false;
     }
 
-
-    private void OnMouseDown()
+    public void onUp()
     {
-        dragging = true;
-    }
-
-    private void OnMouseUp()
-    {
-        dragging=false;
+        dragging = false;
+        col.enabled = false;
         if (checkList())
         {
             int[,] loc = new int[dragged.Count, 2];
-            for(int i = 0; i < dragged.Count; i++)
+            for (int i = 0; i < dragged.Count; i++)
             {
-                loc[i, 0] =  (int)mover.revConX(dragged[i].transform.position.x);
-                loc[i, 1] = (int)mover.revConY(dragged[i].transform.position.y);
+                loc[i, 0] = dragged[i].GetComponent<Berry>().getX();
+                loc[i, 1] = dragged[i].GetComponent<Berry>().getY();
             }
+            clearAdded();
             grid.removeGroup(loc); //Make variable later for inventory
-
+            dragged.Clear();
         }
+        else
+        {
+            clearAdded();
+            dragged.Clear();
+        }
+    }
+
+    void clearAdded()
+    {
+        for (int i = 0; i < dragged.Count; i++)
+        {
+            dragged[i].GetComponent<Berry>().added = false;
+        }
+    }
+
+    public void onDown()
+    {
+        dragging = true;
+        col.enabled = true;
     }
 }
