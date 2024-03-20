@@ -1098,11 +1098,7 @@ MonoBehaviour:
   mover: {fileID: 1616609107}
   width: 8
   height: 10
-<<<<<<< Updated upstream
   berries: 0000000001000000
-=======
-  berries: 
->>>>>>> Stashed changes
 --- !u!4 &1616609106
 Transform:
   m_ObjectHideFlags: 0
@@ -1166,18 +1162,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1616609103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: 2ab004669bac73441be89bdbffacc2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dragObject: {fileID: 1976409324}
   grid: {fileID: 1616609105}
   mover: {fileID: 1616609107}
-=======
-  m_Script: {fileID: 11500000, guid: d39e780ad0a3d4e5c978b21741626a17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
->>>>>>> Stashed changes
 --- !u!1 &1721947451
 GameObject:
   m_ObjectHideFlags: 0
