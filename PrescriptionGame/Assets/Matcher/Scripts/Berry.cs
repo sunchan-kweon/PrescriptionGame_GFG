@@ -48,4 +48,14 @@ public class Berry : MonoBehaviour
     {
         return doesGravity;
     }
+
+    public int getId()
+    {
+        return id;
+    }
+
+    public int getNum2Match()
+    {
+        return numToMatch;
+    }
 }

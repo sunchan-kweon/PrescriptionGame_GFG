@@ -39,14 +39,25 @@ public class BerryMover : MonoBehaviour
     }
 
     //Converts X from matrix to real space
-    float conX(int x)
+    float conX(float x)
     {
         return x*xScale + xOffset;
     }
+
+    //Converts X from real space to matrix
+    public float revConX(float x)
+    {
+        return x / xScale - xOffset;
+    }
     //Same for Y
-    float conY(int y)
+    float conY(float y)
     {
         return y*yScale + yOffset;
+    }
+
+    public float revConY(float y)
+    {
+        return y / yScale - yOffset;
     }
 
 }

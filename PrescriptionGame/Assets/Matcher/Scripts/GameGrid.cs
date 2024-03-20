@@ -76,7 +76,7 @@ public class GameGrid : MonoBehaviour
     }
 
     //Loc is an array that contains the x and y position on the board of which to be removed
-    GameObject[] removeGroup(int[,] loc)
+    public GameObject[] removeGroup(int[,] loc)
     {
         GameObject[] removed = new GameObject[loc.GetLength(0) + 1];
         for(int i = 0; i < loc.GetLength(0); i++)
@@ -85,6 +85,7 @@ public class GameGrid : MonoBehaviour
         }
         gravity();
         fillBoard(berries);
+        mover.updateBoard();
         return removed;
 
     }
