@@ -22,7 +22,7 @@ public class PetUIController : MonoBehaviour
         }
     }*/
 
-    public void UpdateFoodBar(float maxFood, float currentFood)
+    public void UpdateFoodBar(int maxFood, int currentFood)
     {
         foodImage.fillAmount = currentFood / maxFood;
     }

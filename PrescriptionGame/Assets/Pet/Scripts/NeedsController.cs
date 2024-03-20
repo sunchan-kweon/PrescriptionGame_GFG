@@ -8,7 +8,7 @@ public class NeedsController : MonoBehaviour
     public int food;
     public int foodTickRate;
 
-    private PetUIController foodBar;
+    public PetUIController foodBar;
     
     public void Initialize(int food, int foodTickRate)
     {
