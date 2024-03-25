@@ -11,9 +11,11 @@ public class InputManager : MonoBehaviour
     public event EndTouchEvent OnEndTouch; 
 
     private TouchControls touchControls;
+    private DragBehavior drag;
 
     private void Awake(){
         touchControls = new TouchControls();
+        drag = new DragBehavior();
     }
 
     private void OnEnable(){
@@ -32,12 +34,14 @@ public class InputManager : MonoBehaviour
 
     private void StartTouch(InputAction.CallbackContext context)
     {
+        drag.onDown();
         Debug.Log("Touch started" + touchControls.Touch.TouchPosition.ReadValue<Vector2>());
         if(OnStartTouch != null) OnStartTouch(touchControls.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
     }
 
     private void EndTouch(InputAction.CallbackContext context)
     {
+        drag.onUp();
         Debug.Log("Touch ended" + touchControls.Touch.TouchPosition.ReadValue<Vector2>());
         if(OnEndTouch != null) OnEndTouch(touchControls.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.time);
     }
