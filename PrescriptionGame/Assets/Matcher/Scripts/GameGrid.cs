@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class GameGrid : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class GameGrid : MonoBehaviour
     [SerializeField] int width;
     [SerializeField] int height;
     [SerializeField] int[] berries;
+    public int score;
+    public TextMeshProUGUI scoretext;
+
     public GameGrid(int w, int h)
     {
         //Initialize the Board with size width, height. Height is at the bottom 0 is at the top.
@@ -121,6 +125,9 @@ public class GameGrid : MonoBehaviour
         return board[x, y];
     }
 
-    
+    public void addScore(int x){
+        score += x;
+        scoretext.text = score.ToString();
+    }
     
 }

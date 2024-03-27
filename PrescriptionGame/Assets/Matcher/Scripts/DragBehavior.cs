@@ -14,7 +14,6 @@ public class DragBehavior : MonoBehaviour
     [SerializeField] CircleCollider2D col;
     Vector3 mouseWorldPos;
     
-
     private void Update()
     {
         mouseWorldPos.z = 0f;
@@ -92,6 +91,7 @@ public class DragBehavior : MonoBehaviour
                 loc[i, 1] = dragged[i].GetComponent<Berry>().getY();
             }
             clearAdded();
+            grid.addScore(dragged.Count * 100);
             grid.removeGroup(loc); //Make variable later for inventory
             dragged.Clear();
         }
