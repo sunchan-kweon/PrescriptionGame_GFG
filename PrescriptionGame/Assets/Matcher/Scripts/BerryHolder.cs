@@ -13,5 +13,10 @@ public class BerryHolder : MonoBehaviour
         return container[id];
     }
 
+    public int getSize()
+    {
+        return container.Length;
+    }
+
     
 }

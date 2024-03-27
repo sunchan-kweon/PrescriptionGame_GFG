@@ -120,7 +120,4 @@ public class GameGrid : MonoBehaviour
     {
         return board[x, y];
     }
-
-    
-    
 }
