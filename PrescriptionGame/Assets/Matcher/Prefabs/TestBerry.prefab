@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7173817544315542376}
   - component: {fileID: -8520890602711219019}
   - component: {fileID: -755533929029292241}
+  - component: {fileID: -3747490206968673438}
   m_Layer: 0
   m_Name: TestBerry
   m_TagString: Untagged
@@ -102,7 +103,7 @@ MonoBehaviour:
   name: Testerry
   description: Testin it
   id: 0
-  incompatibility: 01000000
+  incompatibility: 
   doesGravity: 1
   numToMatch: 3
   locX: 0
@@ -151,7 +152,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5244106762723275998}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -169,4 +170,20 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
+--- !u!114 &-3747490206968673438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5244106762723275998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f41db22c1cffe40b403fd9e9235c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  berry: {fileID: 7173817544315542376}
+  rb: {fileID: -755533929029292241}
+  col: {fileID: -8520890602711219019}
+  mover: {fileID: 0}
