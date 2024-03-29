@@ -14,7 +14,7 @@ public class GameGrid : MonoBehaviour
     [SerializeField] int width;
     [SerializeField] int height;
     [SerializeField] int[] berries;
-    public int score;
+    public static int score;
     public TextMeshProUGUI scoretext;
 
     public GameGrid(int w, int h)
@@ -127,7 +127,7 @@ public class GameGrid : MonoBehaviour
 
     public void addScore(int x){
         score += x;
-        scoretext.text = score.ToString();
+        scoretext.text = score.ToString("D6");
     }
     
 }
