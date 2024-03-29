@@ -11,6 +11,7 @@ public class DragBehavior : MonoBehaviour
     bool dragging = false;
     [SerializeField] GameGrid grid;
     [SerializeField] BerryMover mover;
+    [SerializeField] BerryHolder holder;
     [SerializeField] CircleCollider2D col;
     Vector3 mouseWorldPos;
     
@@ -50,6 +51,7 @@ public class DragBehavior : MonoBehaviour
             int prevId = dragged[0].GetComponent<Berry>().getId();
             int count = 0;
             int toMatch = dragged[0].GetComponent<Berry>().getNum2Match();
+            int[] ids = new int[holder.getSize()];
 
             for (int i = 1; i < dragged.Count; i++)
             {
@@ -62,6 +64,14 @@ public class DragBehavior : MonoBehaviour
                     }
                     else
                     {
+                        ids[prevId] = 1;
+                        for(int j = 0; j < dragged[i].GetComponent<Berry>().getIncomp().Length; j++)
+                        {
+                            if (ids[dragged[i].GetComponent<Berry>().getIncomp()[j]] == 1)
+                            {
+                                return false;
+                            }
+                        }
                         prevId = dragged[i].GetComponent<Berry>().getId();
                         count = 0;
                         toMatch = dragged[i].GetComponent<Berry>().getNum2Match();
