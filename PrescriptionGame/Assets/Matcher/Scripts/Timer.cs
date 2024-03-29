@@ -58,7 +58,7 @@ public class Timer : MonoBehaviour
             }
 
             if(countdowntime <= -3)
-            { 
+            {
                 SceneManager.LoadScene("Result");
             }
 
