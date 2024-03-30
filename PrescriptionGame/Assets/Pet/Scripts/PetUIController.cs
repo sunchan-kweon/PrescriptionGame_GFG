@@ -9,7 +9,7 @@ public class PetUIController : MonoBehaviour
 
     private void Start()
     {
-        foodImage = GetComponent<Image>();
+        
     }
 
     //public static PetUIController instance;
@@ -24,6 +24,7 @@ public class PetUIController : MonoBehaviour
 
     public void UpdateFoodBar(float maxFood, float currentFood)
     {
+        Debug.Log(currentFood / maxFood);
         foodImage.fillAmount = currentFood / maxFood;
     }
 }

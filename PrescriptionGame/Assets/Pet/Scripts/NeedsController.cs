@@ -19,15 +19,16 @@ public class NeedsController : MonoBehaviour
 
     public void Start()
     {
-        foodBar = GetComponentInChildren<PetUIController>();
+        //foodBar = GetComponentInChildren<PetUIController>();
     }
 
     public void Update()
     {
+        foodBar.UpdateFoodBar(100, food);
+        //Debug.Log(food);
         if(TimingManager.gameHourTimer < 0)
         {
             ChangeFood(-foodTickRate);
-            foodBar.UpdateFoodBar(100, food);
             //PetUIController.instance.UpdateImages(food);
         }
     }
@@ -45,7 +46,6 @@ public class NeedsController : MonoBehaviour
         {
             food = 100;
         }
-
         
     }
 }
