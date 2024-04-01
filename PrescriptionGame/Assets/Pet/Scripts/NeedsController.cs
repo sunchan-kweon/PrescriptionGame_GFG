@@ -8,12 +8,24 @@ public class NeedsController : MonoBehaviour
     public int food;
     public int foodTickRate;
 
+    public int happiness;
+    public int happinessTickRate;
+
+    public int energy;
+    public int energyTickRate;
+
     public PetUIController foodBar;
-    
-    public void Initialize(int food, int foodTickRate)
+    public PetUIController happinessBar;
+    public PetUIController energyBar;
+
+    public void Initialize(int food, int foodTickRate, int happiness, int happinessTickRate, int energy, int energyTickRate)
     {
         this.food = food;
         this.foodTickRate = foodTickRate;
+        this.happiness = happiness;
+        this.happinessTickRate = happinessTickRate;
+        this.energy = energy;
+        this.energyTickRate = energyTickRate;
         //PetUIController.instance.UpdateImages(food);
     }
 
@@ -25,10 +37,14 @@ public class NeedsController : MonoBehaviour
     public void Update()
     {
         foodBar.UpdateFoodBar(100, food);
+        happinessBar.UpdateHappinessBar(100, happiness);
+        energyBar.UpdateEnergyBar(100, energy);
         //Debug.Log(food);
-        if(TimingManager.gameHourTimer < 0)
+        if (TimingManager.gameHourTimer < 0)
         {
             ChangeFood(-foodTickRate);
+            ChangeHappiness(-happinessTickRate);
+            ChangeEnergy(-energyTickRate);
             //PetUIController.instance.UpdateImages(food);
         }
     }
@@ -37,7 +53,6 @@ public class NeedsController : MonoBehaviour
     {
         food += amount;
         
-
         if (food < 10)
         {
             //PetController.Sad();
@@ -47,5 +62,35 @@ public class NeedsController : MonoBehaviour
             food = 100;
         }
         
+    }
+
+    public void ChangeHappiness(int amount)
+    {
+        happiness += amount;
+
+        if (happiness < 10)
+        {
+            //PetController.Sad();
+        }
+        else if (happiness > 100)
+        {
+            happiness = 100;
+        }
+
+    }
+
+    public void ChangeEnergy(int amount)
+    {
+        energy += amount;
+
+        if (energy < 10)
+        {
+            //PetController.Sad();
+        }
+        else if (energy > 100)
+        {
+            energy = 100;
+        }
+
     }
 }
