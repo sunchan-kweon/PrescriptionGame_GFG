@@ -1270,7 +1270,7 @@ GameObject:
   - component: {fileID: 1616609110}
   m_Layer: 0
   m_Name: BoardManager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1783,6 +1783,7 @@ MonoBehaviour:
   dragged: []
   grid: {fileID: 1616609105}
   mover: {fileID: 1616609107}
+  holder: {fileID: 1616609104}
   col: {fileID: 1976409325}
 --- !u!1 &1987457288
 GameObject:

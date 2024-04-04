@@ -16,7 +16,7 @@ public class BerryMover : MonoBehaviour
 
     public void updateBoard()
     {
-        for(int x = 0; x < grid.getWidth(); x++)
+        /*for(int x = 0; x < grid.getWidth(); x++)
         {
             for (int y = grid.getHeight() - 1; y >= 0; y--)
             {
@@ -25,11 +25,11 @@ public class BerryMover : MonoBehaviour
                     GameObject current = grid.get(x, y);
                     if (current.transform.position.x != conX(x) || current.transform.position.y != conY(y))
                     {
-                        current.transform.position = new Vector3(conX(x), conY(y), 0);
+                        current.transform.position = new Vector3(conX(x), conY(y) + 50, 0);
                     }
                 }
             }
-        }
+        }*/
 
     }
 
@@ -39,7 +39,7 @@ public class BerryMover : MonoBehaviour
     }
 
     //Converts X from matrix to real space
-    float conX(float x)
+    public float conX(float x)
     {
         return (x*xScale + xOffset);
     }
@@ -50,7 +50,7 @@ public class BerryMover : MonoBehaviour
         return (x / xScale - xOffset);
     }
     //Same for Y
-    float conY(float y)
+    public float conY(float y)
     {
         return -(y*yScale + yOffset);
     }

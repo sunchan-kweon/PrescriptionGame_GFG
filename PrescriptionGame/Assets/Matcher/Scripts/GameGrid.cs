@@ -15,6 +15,7 @@ public class GameGrid : MonoBehaviour
     [SerializeField] int width;
     [SerializeField] int height;
     [SerializeField] int[] berries;
+
     public static int score;
     public TextMeshProUGUI scoretext;
 
@@ -41,7 +42,7 @@ public class GameGrid : MonoBehaviour
             {
                 if (board[x, y] == null)
                 {
-                    board[x, y] = Instantiate(holder.getBerry(ids[Random.Range(0, ids.Length)]), new Vector3(50, 0f, 50), Quaternion.identity);
+                    board[x, y] = Instantiate(holder.getBerry(ids[Random.Range(0, ids.Length)]), new Vector2(mover.conX(x), (mover.conY(y))+2), Quaternion.identity);
                     board[x, y].transform.localScale = new Vector2(mover.getScale(), mover.getScale());
                     board[x, y].GetComponent<Berry>().locX = x;
                     board[x, y].GetComponent<Berry>().locY = y;
@@ -66,6 +67,7 @@ public class GameGrid : MonoBehaviour
                         {
                             board[x, y] = board[x, i];
                             board[x, y].GetComponent<Berry>().setPosition(x, y);
+                            board[x, y].GetComponent<Rigidbody2D>().gravityScale = 1;
                             board[x, i] = null;
                             break;
                         }
@@ -121,14 +123,13 @@ public class GameGrid : MonoBehaviour
         width = w;
     }
 
-    public GameObject get(int x, int y)
-    {
-        return board[x, y];
-    }
-
     public void addScore(int x){
         score += x;
         scoretext.text = score.ToString("D6");
     }
-    
+
+    public GameObject get(int x, int y)
+    {
+        return board[x, y];
+    }
 }
