@@ -66,7 +66,7 @@ public class DragBehavior : MonoBehaviour
                     {
                         return -1;
                     }
-                    else
+                    else //This is when 
                     {
                         ids[prevId] = 1;
                         for(int j = 0; j < dragged[i].GetComponent<Berry>().getIncomp().Length; j++)
@@ -120,6 +120,16 @@ public class DragBehavior : MonoBehaviour
 
     private void drawLines()
     {
+        if(checkList() >= 0)
+        {
+            line.startColor = Color.green;
+            line.endColor = Color.green;
+        }
+        else
+        {
+            line.startColor = Color.red;
+            line.endColor = Color.red;
+        }
         Vector3[] linePos = new Vector3[dragged.Count];
         line.positionCount = dragged.Count;
         for (int i = 0; i < dragged.Count; i++)
