@@ -1751,7 +1751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 69.26, y: 1013.57}
+  m_AnchoredPosition: {x: 69.255, y: 1015.4}
   m_SizeDelta: {x: 611.03, y: 37.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1486204471
@@ -2145,7 +2145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7087298825469928520, guid: 356148769bbb13e4f9f69cd52fe626c1, type: 3}
       propertyPath: energy
-      value: 100
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7087298825469928520, guid: 356148769bbb13e4f9f69cd52fe626c1, type: 3}
       propertyPath: foodBar
@@ -2157,7 +2157,7 @@ PrefabInstance:
       objectReference: {fileID: 1314543358}
     - target: {fileID: 7087298825469928520, guid: 356148769bbb13e4f9f69cd52fe626c1, type: 3}
       propertyPath: happiness
-      value: 100
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7087298825469928520, guid: 356148769bbb13e4f9f69cd52fe626c1, type: 3}
       propertyPath: foodTickRate
