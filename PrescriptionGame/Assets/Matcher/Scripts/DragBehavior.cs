@@ -13,6 +13,7 @@ public class DragBehavior : MonoBehaviour
     [SerializeField] BerryMover mover;
     [SerializeField] BerryHolder holder;
     [SerializeField] CircleCollider2D col;
+    [SerializeField] LineRenderer line;
     Vector3 mouseWorldPos;
     
     private void Update()
@@ -39,12 +40,13 @@ public class DragBehavior : MonoBehaviour
             {
                 dragged.Add(collider.gameObject);
                 collider.gameObject.GetComponent<Berry>().added = true;
+                drawLines();
             }
             
         }
     }
 
-    bool checkList()
+    int checkList()
     {
         if(dragged.Count > 0)
         {
@@ -52,6 +54,7 @@ public class DragBehavior : MonoBehaviour
             int count = 0;
             int toMatch = dragged[0].GetComponent<Berry>().getNum2Match();
             int[] ids = new int[holder.getSize()];
+            int chains = 1;
 
             for (int i = 1; i < dragged.Count; i++)
             {
@@ -60,20 +63,21 @@ public class DragBehavior : MonoBehaviour
                 {
                     if (count != toMatch)
                     {
-                        return false;
+                        return -1;
                     }
-                    else
+                    else //This is when 
                     {
                         ids[prevId] = 1;
                         for(int j = 0; j < dragged[i].GetComponent<Berry>().getIncomp().Length; j++)
                         {
                             if (ids[dragged[i].GetComponent<Berry>().getIncomp()[j]] == 1)
                             {
-                                return false;
+                                return -1;
                             }
                         }
                         prevId = dragged[i].GetComponent<Berry>().getId();
                         count = 0;
+                        chains++;
                         toMatch = dragged[i].GetComponent<Berry>().getNum2Match();
                     }
                 }
@@ -81,18 +85,19 @@ public class DragBehavior : MonoBehaviour
             count++;
             if (count != toMatch)
             {
-                return false;
+                return -1;
             }
-            return true;
+            return chains;
         }
-        return false;
+        return -1;
     }
 
     public void onUp()
     {
         dragging = false;
         col.enabled = false;
-        if (checkList())
+        int chains = checkList();
+        if (chains != -1)
         {
             int[,] loc = new int[dragged.Count, 2];
             for (int i = 0; i < dragged.Count; i++)
@@ -110,6 +115,28 @@ public class DragBehavior : MonoBehaviour
             clearAdded();
             dragged.Clear();
         }
+        line.positionCount = 0;
+    }
+
+    private void drawLines()
+    {
+        if(checkList() >= 0)
+        {
+            line.startColor = Color.green;
+            line.endColor = Color.green;
+        }
+        else
+        {
+            line.startColor = Color.red;
+            line.endColor = Color.red;
+        }
+        Vector3[] linePos = new Vector3[dragged.Count];
+        line.positionCount = dragged.Count;
+        for (int i = 0; i < dragged.Count; i++)
+        {
+            linePos[i] = dragged[i].transform.position;
+        }
+        line.SetPositions(linePos);
     }
 
     void clearAdded()
