@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class NeedsController : MonoBehaviour
 {
-
     public int food;
     public int foodTickRate;
 
@@ -17,6 +16,20 @@ public class NeedsController : MonoBehaviour
     public PetUIController foodBar;
     public PetUIController happinessBar;
     public PetUIController energyBar;
+
+    public void SavePet()
+    {
+        SaveSystem.SavePet(this);
+    }
+
+    public void LoadPet()
+    {
+        PetData data = SaveSystem.LoadPet();
+
+        food = data.food;
+        happiness = data.happiness;
+        energy = data.energy;
+    }
 
     public void Initialize(int food, int foodTickRate, int happiness, int happinessTickRate, int energy, int energyTickRate)
     {
@@ -53,11 +66,12 @@ public class NeedsController : MonoBehaviour
     {
         food += amount;
         
-        if (food < 10)
+        if (food <= 0)
         {
+            food = 0;
             //PetController.Sad();
         } 
-        else if (food > 100)
+        else if (food >= 100)
         {
             food = 100;
         }
@@ -68,11 +82,12 @@ public class NeedsController : MonoBehaviour
     {
         happiness += amount;
 
-        if (happiness < 10)
+        if (happiness <= 0)
         {
+            happiness = 0;
             //PetController.Sad();
         }
-        else if (happiness > 100)
+        else if (happiness >= 100)
         {
             happiness = 100;
         }
@@ -83,11 +98,12 @@ public class NeedsController : MonoBehaviour
     {
         energy += amount;
 
-        if (energy < 10)
+        if (energy <= 0)
         {
+            energy = 0;
             //PetController.Sad();
         }
-        else if (energy > 100)
+        else if (energy >= 100)
         {
             energy = 100;
         }
