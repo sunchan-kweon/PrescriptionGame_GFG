@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class NeedsController : MonoBehaviour
 {
-    public int food;
+    public static int food;
     public int foodTickRate;
 
-    public int happiness;
+    public static int happiness;
     public int happinessTickRate;
 
-    public int energy;
+    public static int energy;
     public int energyTickRate;
+
+    public static bool firstTimePlaying = true;
 
     public PetUIController foodBar;
     public PetUIController happinessBar;
@@ -19,7 +21,7 @@ public class NeedsController : MonoBehaviour
 
     public void SavePet()
     {
-        SaveSystem.SavePet(this);
+        SaveSystem.SavePet();
     }
 
     public void LoadPet()
@@ -33,11 +35,11 @@ public class NeedsController : MonoBehaviour
 
     public void Initialize(int food, int foodTickRate, int happiness, int happinessTickRate, int energy, int energyTickRate)
     {
-        this.food = food;
+        NeedsController.food = food;
         this.foodTickRate = foodTickRate;
-        this.happiness = happiness;
+        NeedsController.happiness = happiness;
         this.happinessTickRate = happinessTickRate;
-        this.energy = energy;
+        NeedsController.energy = energy;
         this.energyTickRate = energyTickRate;
         //PetUIController.instance.UpdateImages(food);
     }

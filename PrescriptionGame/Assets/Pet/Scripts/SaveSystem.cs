@@ -4,13 +4,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
-    public static void SavePet(NeedsController pet)
+    public static void SavePet()
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/pet.exe";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        PetData data = new PetData(pet);
+        PetData data = new PetData();
 
         formatter.Serialize(stream, data);
         stream.Close();

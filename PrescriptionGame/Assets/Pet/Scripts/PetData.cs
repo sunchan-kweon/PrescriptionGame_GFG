@@ -8,10 +8,12 @@ public class PetData
     public int food;
     public int happiness;
     public int energy;
+    public bool firstTimePlaying;
 
-    public PetData(NeedsController pet){
-        food = pet.food;
-        happiness = pet.happiness;
-        energy = pet.energy;
+    public PetData(){
+        food = NeedsController.food;
+        happiness = NeedsController.happiness;
+        energy = NeedsController.energy;
+        firstTimePlaying = NeedsController.firstTimePlaying;
     }
 }
