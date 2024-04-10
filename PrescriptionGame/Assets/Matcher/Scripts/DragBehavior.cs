@@ -15,11 +15,16 @@ public class DragBehavior : MonoBehaviour
     [SerializeField] CircleCollider2D col;
     [SerializeField] LineRenderer line;
     Vector3 mouseWorldPos;
+
+    private void Start()
+    {
+
+    }
     
     private void Update()
     {
-        mouseWorldPos.z = 0f;
         mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPos.z = 0f;
         transform.position = mouseWorldPos;
 
         if (Input.GetMouseButtonDown(0))

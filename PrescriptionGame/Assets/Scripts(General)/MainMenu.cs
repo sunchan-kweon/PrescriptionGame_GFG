@@ -21,6 +21,8 @@ public class MainMenu : MonoBehaviour
     public void ToPuzzle()
     {
         SceneManager.LoadScene("Matcher");
+        NeedsController.food -= 5;
+        NeedsController.energy -= 10;
     }
 
     public void ToSettings()

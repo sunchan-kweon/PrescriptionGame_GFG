@@ -7,7 +7,6 @@ public class ChangeSprite : MonoBehaviour
     public SpriteRenderer dog;
     public Sprite hungrysprite;
     public Sprite happysprite;
-    public NeedsController n;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +17,7 @@ public class ChangeSprite : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if( n.food >= 50)
+        if( NeedsController.food >= 50)
         {
             dog.sprite = happysprite;
         }
