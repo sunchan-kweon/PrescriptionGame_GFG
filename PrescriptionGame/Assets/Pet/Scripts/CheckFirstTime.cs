@@ -7,13 +7,13 @@ public class CheckFirstTime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(NeedsController.firstTimePlaying == true)
+        if(NeedsController.playedOnce == false)
         {
-            NeedsController.firstTimePlaying = false;
             NeedsController.food = 100;
             NeedsController.happiness = 100;
             NeedsController.energy = 100;
         }
+        NeedsController.playedOnce = true;
         SaveSystem.SavePet();
     }
 

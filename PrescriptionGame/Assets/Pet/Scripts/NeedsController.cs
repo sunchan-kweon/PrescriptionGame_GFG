@@ -5,15 +5,9 @@ using UnityEngine;
 public class NeedsController : MonoBehaviour
 {
     public static int food;
-    public int foodTickRate;
-
     public static int happiness;
-    public int happinessTickRate;
-
     public static int energy;
-    public int energyTickRate;
-
-    public static bool firstTimePlaying = true;
+    public static bool playedOnce;
 
     public PetUIController foodBar;
     public PetUIController happinessBar;
@@ -33,14 +27,11 @@ public class NeedsController : MonoBehaviour
         energy = data.energy;
     }
 
-    public void Initialize(int food, int foodTickRate, int happiness, int happinessTickRate, int energy, int energyTickRate)
+    public void Initialize(int food, int happiness,int energy)
     {
         NeedsController.food = food;
-        this.foodTickRate = foodTickRate;
         NeedsController.happiness = happiness;
-        this.happinessTickRate = happinessTickRate;
         NeedsController.energy = energy;
-        this.energyTickRate = energyTickRate;
         //PetUIController.instance.UpdateImages(food);
     }
 
@@ -54,12 +45,9 @@ public class NeedsController : MonoBehaviour
         foodBar.UpdateFoodBar(100, food);
         happinessBar.UpdateHappinessBar(100, happiness);
         energyBar.UpdateEnergyBar(100, energy);
-        //Debug.Log(food);
+
         if (TimingManager.gameHourTimer < 0)
         {
-            ChangeFood(-foodTickRate);
-            ChangeHappiness(-happinessTickRate);
-            ChangeEnergy(-energyTickRate);
             //PetUIController.instance.UpdateImages(food);
         }
     }
