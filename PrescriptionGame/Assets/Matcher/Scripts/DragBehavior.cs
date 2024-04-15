@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class DragBehavior : MonoBehaviour
 {
+    public static int caffeinecount;
+    public static int insulincount;
+    public static int metformincount;
 
     //This script is on a collider that follows the mouse/finger when that is an option
     [SerializeField]List<GameObject> dragged = new List<GameObject> ();
@@ -107,6 +110,21 @@ public class DragBehavior : MonoBehaviour
                 loc[i, 1] = dragged[i].GetComponent<Berry>().getY();
             }
             clearAdded();
+            int clearid = dragged[0].GetComponent<Berry>().getId();
+            switch(clearid){
+                case 0:
+                    insulincount += 3;
+                    break;
+                case 1:
+                    metformincount += 3;
+                    break;
+                case 2:
+                    caffeinecount += 3;
+                    break;
+                default:
+                    break;
+
+            }
             grid.addScore(dragged.Count * 100);
             grid.removeGroup(loc); //Make variable later for inventory
             dragged.Clear();
