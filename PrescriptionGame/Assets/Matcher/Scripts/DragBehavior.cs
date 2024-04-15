@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -15,11 +16,6 @@ public class DragBehavior : MonoBehaviour
     [SerializeField] CircleCollider2D col;
     [SerializeField] LineRenderer line;
     Vector3 mouseWorldPos;
-
-    private void Start()
-    {
-
-    }
     
     private void Update()
     {
@@ -37,7 +33,7 @@ public class DragBehavior : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collider)
+    /*private void OnCollisionEnter2D(Collision2D collider)
     {
         if (dragging)
         {
@@ -49,7 +45,7 @@ public class DragBehavior : MonoBehaviour
             }
             
         }
-    }
+    }*/
 
     int checkList()
     {
@@ -123,7 +119,7 @@ public class DragBehavior : MonoBehaviour
         line.positionCount = 0;
     }
 
-    private void drawLines()
+    public void drawLines()
     {
         if(checkList() >= 0)
         {
@@ -155,6 +151,16 @@ public class DragBehavior : MonoBehaviour
     public void onDown()
     {
         dragging = true;
-        col.enabled = true;
+        //col.enabled = true;
+    }
+
+    public void addDragged(GameObject obj)
+    {
+        dragged.Add(obj);
+    }
+
+    public bool isDragging()
+    {
+        return dragging;
     }
 }

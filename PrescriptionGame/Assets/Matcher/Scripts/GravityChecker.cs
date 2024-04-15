@@ -13,19 +13,20 @@ public class GravityChecker : MonoBehaviour
     {
         mover = GameObject.FindWithTag("Manager").GetComponent<BerryMover>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
-        if (transform.position.y <= mover.conY(berry.getY())){
-            col.enabled = true;
-            rb.gravityScale = 0;
-            rb.isKinematic = true;
-            transform.position = new Vector2(transform.position.x, mover.conY(berry.getY()));
+        if (GetComponent<RectTransform>().localPosition.y <= mover.conY(berry.getY())){
+            //col.enabled = true;
+            //rb.gravityScale = 0;
+            //rb.isKinematic = true;
+            GetComponent<RectTransform>().localPosition = new Vector2(GetComponent<RectTransform>().localPosition.x, mover.conY(berry.getY()));
         }
         else
         {
-            rb.isKinematic=false;
-            rb.gravityScale = 0.4f;
-            col.enabled = false;
+            //rb.isKinematic=false;
+            //rb.gravityScale = 0.4f;
+            //col.enabled = false;
+            GetComponent<RectTransform>().localPosition = GetComponent<RectTransform>().localPosition - (new Vector3(0, 9.8f));
         }
     }
 }
