@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,6 +6,9 @@ using UnityEngine;
 
 public class DragBehavior : MonoBehaviour
 {
+    public static int caffeinecount;
+    public static int insulincount;
+    public static int metformincount;
 
     //This script is on a collider that follows the mouse/finger when that is an option
     [SerializeField]List<GameObject> dragged = new List<GameObject> ();
@@ -15,11 +19,6 @@ public class DragBehavior : MonoBehaviour
     [SerializeField] CircleCollider2D col;
     [SerializeField] LineRenderer line;
     Vector3 mouseWorldPos;
-
-    private void Start()
-    {
-
-    }
     
     private void Update()
     {
@@ -37,7 +36,7 @@ public class DragBehavior : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collider)
+    /*private void OnCollisionEnter2D(Collision2D collider)
     {
         if (dragging)
         {
@@ -49,7 +48,7 @@ public class DragBehavior : MonoBehaviour
             }
             
         }
-    }
+    }*/
 
     int checkList()
     {
@@ -111,6 +110,21 @@ public class DragBehavior : MonoBehaviour
                 loc[i, 1] = dragged[i].GetComponent<Berry>().getY();
             }
             clearAdded();
+            int clearid = dragged[0].GetComponent<Berry>().getId();
+            switch(clearid){
+                case 0:
+                    insulincount += 3;
+                    break;
+                case 1:
+                    metformincount += 3;
+                    break;
+                case 2:
+                    caffeinecount += 3;
+                    break;
+                default:
+                    break;
+
+            }
             grid.addScore(dragged.Count * 100);
             grid.removeGroup(loc); //Make variable later for inventory
             dragged.Clear();
@@ -123,7 +137,7 @@ public class DragBehavior : MonoBehaviour
         line.positionCount = 0;
     }
 
-    private void drawLines()
+    public void drawLines()
     {
         if(checkList() >= 0)
         {
@@ -155,6 +169,16 @@ public class DragBehavior : MonoBehaviour
     public void onDown()
     {
         dragging = true;
-        col.enabled = true;
+        //col.enabled = true;
+    }
+
+    public void addDragged(GameObject obj)
+    {
+        dragged.Add(obj);
+    }
+
+    public bool isDragging()
+    {
+        return dragging;
     }
 }
