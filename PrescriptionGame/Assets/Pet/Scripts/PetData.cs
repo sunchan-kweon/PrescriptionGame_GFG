@@ -20,5 +20,8 @@ public class PetData
         happiness = NeedsController.happiness;
         energy = NeedsController.energy;
         playedOnce = NeedsController.playedOnce;
+        caffeine = Inventory.caffeine;
+        insulin = Inventory.insulin;
+        metformin = Inventory.metformin;
     }
 }

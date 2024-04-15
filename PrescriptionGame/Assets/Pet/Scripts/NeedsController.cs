@@ -27,17 +27,9 @@ public class NeedsController : MonoBehaviour
         energy = data.energy;
     }
 
-    public void Initialize(int food, int happiness,int energy)
-    {
-        NeedsController.food = food;
-        NeedsController.happiness = happiness;
-        NeedsController.energy = energy;
-        //PetUIController.instance.UpdateImages(food);
-    }
-
     public void Start()
     {
-        //foodBar = GetComponentInChildren<PetUIController>();
+         
     }
 
     public void Update()
