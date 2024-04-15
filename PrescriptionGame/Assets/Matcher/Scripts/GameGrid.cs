@@ -11,6 +11,7 @@ public class GameGrid : MonoBehaviour
     //Replace Object with Berry Class
     [SerializeField] BerryHolder holder;
     [SerializeField] BerryMover mover;
+    [SerializeField] Transform parent;
     GameObject[,] board;
     [SerializeField] int width;
     [SerializeField] int height;
@@ -42,8 +43,9 @@ public class GameGrid : MonoBehaviour
             {
                 if (board[x, y] == null)
                 {
-                    board[x, y] = Instantiate(holder.getBerry(ids[Random.Range(0, ids.Length)]), new Vector2(mover.conX(x), (mover.conY(y))+2), Quaternion.identity);
-                    board[x, y].transform.localScale = new Vector2(mover.getScale(), mover.getScale());
+                    board[x, y] = Instantiate(holder.getBerry(ids[Random.Range(0, ids.Length)]), new Vector2(mover.conX(x), (mover.conY(y)) + 400), Quaternion.identity, parent);
+                    board[x, y].GetComponent<RectTransform>().localScale = new Vector2(mover.getScale(), mover.getScale());
+                    board[x, y].GetComponent<RectTransform>().localPosition = new Vector2(mover.conX(x), mover.conY(y) + 400);
                     board[x, y].GetComponent<Berry>().locX = x;
                     board[x, y].GetComponent<Berry>().locY = y;
                 }
@@ -67,7 +69,7 @@ public class GameGrid : MonoBehaviour
                         {
                             board[x, y] = board[x, i];
                             board[x, y].GetComponent<Berry>().setPosition(x, y);
-                            board[x, y].GetComponent<Rigidbody2D>().gravityScale = 1;
+                            //board[x, y].GetComponent<Rigidbody2D>().gravityScale = 1;
                             board[x, i] = null;
                             break;
                         }
@@ -91,7 +93,7 @@ public class GameGrid : MonoBehaviour
     //Method returns the ammount of each berry removed by index of ID.
     public int[] removeGroup(int[,] loc)
     {
-        int[] removed = new int[berries.Length];
+        int[] removed = new int[holder.getSize()];
         for(int i = 0; i < loc.GetLength(0); i++)
         {
             removed[remove(loc[i, 0], loc[i, 1])]++;

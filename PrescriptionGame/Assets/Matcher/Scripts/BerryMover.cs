@@ -41,23 +41,23 @@ public class BerryMover : MonoBehaviour
     //Converts X from matrix to real space
     public float conX(float x)
     {
-        return (x*xScale + xOffset);
+        return (x*xScale + xOffset - (xScale*(grid.getWidth() - 1) / 2));
     }
 
     //Converts X from real space to matrix
     public float revConX(float x)
     {
-        return (x / xScale - xOffset);
+        return (x / xScale - xOffset + (xScale*(grid.getWidth() - 1) / 2));
     }
     //Same for Y
     public float conY(float y)
     {
-        return -(y*yScale + yOffset);
+        return -(y*yScale + yOffset - (yScale*(grid.getHeight() - 1) / 2));
     }
 
     public float revConY(float y)
     {
-        return -(y / yScale - yOffset);
+        return -(y / yScale - yOffset + (yScale*(grid.getHeight() - 1) / 2));
     }
 
 }
