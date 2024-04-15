@@ -10,6 +10,10 @@ public class Result : MonoBehaviour
     void Start()
     {
         scoretext.text = GameGrid.score.ToString("D6");
+        Inventory.caffeine += DragBehavior.caffeinecount % 20;
+        Inventory.insulin += DragBehavior.insulincount % 30;
+        Inventory.metformin += DragBehavior.metformincount % 30;
+        SaveSystem.SavePet();
     }
 
     // Update is called once per frame

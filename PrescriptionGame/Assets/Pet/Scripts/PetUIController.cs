@@ -26,19 +26,19 @@ public class PetUIController : MonoBehaviour
 
     public void UpdateFoodBar(float maxFood, float currentFood)
     {
-        Debug.Log(currentFood / maxFood);
+        //Debug.Log(currentFood / maxFood);
         foodImage.fillAmount = currentFood / maxFood;
     }
 
     public void UpdateHappinessBar(float maxHappiness, float currentHappiness)
     {
-        Debug.Log(currentHappiness / maxHappiness);
+        //Debug.Log(currentHappiness / maxHappiness);
         happinessImage.fillAmount = currentHappiness / maxHappiness;
     }
 
     public void UpdateEnergyBar(float maxEnergy, float currentEnergy)
     {
-        Debug.Log(currentEnergy / maxEnergy);
+        //Debug.Log(currentEnergy / maxEnergy);
         energyImage.fillAmount = currentEnergy / maxEnergy;
     }
 }

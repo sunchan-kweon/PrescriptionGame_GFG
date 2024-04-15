@@ -44,7 +44,7 @@ public class NeedsController : MonoBehaviour
         }
     }
 
-    public void ChangeFood(int amount)
+    public static void ChangeFood(int amount)
     {
         food += amount;
         
@@ -60,7 +60,7 @@ public class NeedsController : MonoBehaviour
         
     }
 
-    public void ChangeHappiness(int amount)
+    public static void ChangeHappiness(int amount)
     {
         happiness += amount;
 
@@ -76,7 +76,7 @@ public class NeedsController : MonoBehaviour
 
     }
 
-    public void ChangeEnergy(int amount)
+    public static void ChangeEnergy(int amount)
     {
         energy += amount;
 

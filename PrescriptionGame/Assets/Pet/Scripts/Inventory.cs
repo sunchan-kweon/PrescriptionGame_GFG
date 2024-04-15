@@ -21,6 +21,30 @@ public class Inventory : MonoBehaviour
         insulin = data.insulin;
         metformin = data.metformin;
     }
+
+    public void UseCaffeine(){
+        if(caffeine > 0){
+            caffeine -= 1;
+            NeedsController.ChangeEnergy(10);
+            SavePet();
+        }
+    }
+
+    public void UseInsulin(){
+        if(insulin > 0){
+            insulin -= 1;
+            NeedsController.ChangeHappiness(10);
+            SavePet();
+        }
+    }
+
+    public void UseMetformin(){
+        if(metformin > 0){
+            metformin -= 1;
+            NeedsController.ChangeFood(10);
+            SavePet();
+        }
+    }
     
     // Start is called before the first frame update
     void Start()
