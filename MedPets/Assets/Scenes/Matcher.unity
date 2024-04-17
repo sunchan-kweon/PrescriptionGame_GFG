@@ -978,19 +978,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635982067}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 574654047}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1731515369}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 400, y: 799.99994}
+  m_SizeDelta: {x: 800, y: 1600}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635982072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,7 +1131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -139.35999, y: 127.27002}
+  m_AnchoredPosition: {x: -139.35999, y: 212.08997}
   m_SizeDelta: {x: 215.64001, y: 219.79999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &898551367
@@ -1341,7 +1341,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 148.35, y: 127.27002}
+  m_AnchoredPosition: {x: 142.60999, y: 225.91998}
   m_SizeDelta: {x: 203.19, y: 205.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243258294
@@ -2028,7 +2028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.45462793}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 260.64, y: -541.82}
+  m_AnchoredPosition: {x: 260.64, y: -537.78}
   m_SizeDelta: {x: 71.45, y: -6.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1721947453
@@ -2225,6 +2225,7 @@ RectTransform:
   - {fileID: 196529901}
   - {fileID: 1442183482}
   - {fileID: 1672767894}
+  - {fileID: 635982071}
   - {fileID: 1987457289}
   - {fileID: 107644897}
   - {fileID: 72778443}
@@ -2576,4 +2577,3 @@ SceneRoots:
   - {fileID: 527085808}
   - {fileID: 1976409326}
   - {fileID: 99341717}
-  - {fileID: 635982071}
