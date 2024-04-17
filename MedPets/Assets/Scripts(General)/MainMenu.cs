@@ -35,6 +35,17 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Inventory");
     }
 
+    //GUIDEBOOK STUFF
+    public void ToGuidebook()
+    {
+        SceneManager.LoadScene("Guidebook");
+    }
+
+    public void ToMetformin()
+    {
+        SceneManager.LoadScene("Guide_Metformin");
+    }
+
     // public void Credits()
     // {
     //     creditpanel.SetActive(true);

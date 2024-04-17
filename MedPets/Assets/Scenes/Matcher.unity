@@ -1758,6 +1758,7 @@ MonoBehaviour:
   - {fileID: 6867574981052098111, guid: 56691d8df7fc04d4fb1d8fb288987ec2, type: 3}
   - {fileID: 8295853569748415144, guid: 3dbedff745aab2e408f0e8f5b10997a9, type: 3}
   - {fileID: 4234306203650849356, guid: 81fbd422cc657fd4799da4f333c9eca9, type: 3}
+  - {fileID: 4234306203650849356, guid: b91e696e850d9664c9563212dc99b6cb, type: 3}
 --- !u!114 &1616609105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1775,7 +1776,7 @@ MonoBehaviour:
   parent: {fileID: 574654047}
   width: 8
   height: 10
-  berries: 000000000100000002000000
+  berries: 00000000010000000200000003000000
   scoretext: {fileID: 174430643}
 --- !u!4 &1616609106
 Transform:
