@@ -1,12 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Inventory : MonoBehaviour
 {
     public static int caffeine;
     public static int insulin;
     public static int metformin;
+    public static int corn;
+    public static int flour;
+
+    //public TextMeshProUGUI caffeinenum;
+    public TextMeshProUGUI insulinnum;
+    public TextMeshProUGUI metforminnum;
+    public TextMeshProUGUI cornnum;
+    public TextMeshProUGUI flournum;
 
     public void SavePet()
     {
@@ -20,6 +29,8 @@ public class Inventory : MonoBehaviour
         caffeine = data.caffeine;
         insulin = data.insulin;
         metformin = data.metformin;
+        corn = data.corn;
+        flour = data.flour;
     }
 
     public void UseCaffeine(){
@@ -41,6 +52,22 @@ public class Inventory : MonoBehaviour
     public void UseMetformin(){
         if(metformin > 0){
             metformin -= 1;
+            NeedsController.ChangeEnergy(10);
+            SavePet();
+        }
+    }
+
+    public void UseCorn(){
+        if(corn > 0){
+            corn -= 1;
+            NeedsController.ChangeFood(10);
+            SavePet();
+        }
+    }
+
+    public void UseFlour(){
+        if(flour > 0){
+            flour -= 1;
             NeedsController.ChangeFood(10);
             SavePet();
         }
@@ -55,6 +82,10 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //caffeinenum.text = caffeine.ToString("D2");
+        insulinnum.text = insulin.ToString("D2");
+        metforminnum.text = metformin.ToString("D2");
+        cornnum.text = corn.ToString("D2");
+        flournum.text = flour.ToString("D2");
     }
 }

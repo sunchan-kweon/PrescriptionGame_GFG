@@ -8,11 +8,14 @@ public class PetData
     public int food;
     public int happiness;
     public int energy;
+
     public bool playedOnce;
 
     public int caffeine;
     public int insulin;
     public int metformin;
+    public int corn;
+    public int flour;
 
 
     public PetData(){
@@ -23,5 +26,7 @@ public class PetData
         caffeine = Inventory.caffeine;
         insulin = Inventory.insulin;
         metformin = Inventory.metformin;
+        corn = Inventory.corn;
+        flour = Inventory.flour;
     }
 }

@@ -11,6 +11,8 @@ public class Reset : MonoBehaviour
         DragBehavior.insulincount = 0;
         DragBehavior.caffeinecount = 0;
         DragBehavior.metformincount = 0;
+        DragBehavior.corncount = 0;
+        DragBehavior.flourcount = 0;
     }
 
     // Update is called once per frame
