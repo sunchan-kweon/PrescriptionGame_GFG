@@ -21,11 +21,11 @@ public class Result : MonoBehaviour
     void Start()
     {
 
-        caffeineresult = DragBehavior.caffeinecount / 20;
-        insulinresult = DragBehavior.insulincount / 30;
-        metforminresult = DragBehavior.metformincount / 30;
-        cornresult = DragBehavior.corncount / 30;
-        flourresult = DragBehavior.corncount / 30;
+        caffeineresult = DragBehavior.caffeinecount / 6;
+        insulinresult = DragBehavior.insulincount / 9;
+        metforminresult = DragBehavior.metformincount / 9;
+        cornresult = DragBehavior.corncount / 9;
+        flourresult = DragBehavior.corncount / 9;
 
         scoretext.text = GameGrid.score.ToString("D6");
 
