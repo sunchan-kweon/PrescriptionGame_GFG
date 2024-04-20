@@ -127,26 +127,25 @@ public class DragBehavior : MonoBehaviour
             {
                 loc[i, 0] = dragged[i].GetComponent<Berry>().getX();
                 loc[i, 1] = dragged[i].GetComponent<Berry>().getY();
+                int clearid = dragged[i].GetComponent<Berry>().getId();
+                switch(clearid){
+                    case 0:
+                        insulincount += 1;
+                        break;
+                    case 1:
+                        metformincount += 1;
+                        break;
+                    case 2:
+                        corncount += 1;
+                        break;
+                    case 3:
+                        flourcount += 1;
+                        break;
+                    default:
+                        break;
+                }
             }
             clearAdded();
-            int clearid = dragged[0].GetComponent<Berry>().getId();
-            switch(clearid){
-                case 0:
-                    insulincount += 3;
-                    break;
-                case 1:
-                    metformincount += 3;
-                    break;
-                case 2:
-                    corncount += 3;
-                    break;
-                case 3:
-                    flourcount += 3;
-                    break;
-                default:
-                    break;
-
-            }
             audioSource.clip = rightaudio;
             audioSource.Play();
             grid.addScore(dragged.Count * 100);
