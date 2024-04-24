@@ -10,7 +10,7 @@ public class CheckFirstTime : MonoBehaviour
         if(NeedsController.playedOnce == false)
         {
             NeedsController.food = 100;
-            NeedsController.happiness = 100;
+            NeedsController.happiness = 50;
             NeedsController.energy = 100;
         }
         NeedsController.playedOnce = true;

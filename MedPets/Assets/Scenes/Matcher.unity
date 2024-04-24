@@ -284,7 +284,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b83a802ef72e741a7a964b23d3741d51, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e2eae8fa20010d146aca05a348ee54df, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1341,8 +1341,8 @@ MonoBehaviour:
   holder: {fileID: 1616609104}
   mover: {fileID: 1616609107}
   parent: {fileID: 574654047}
-  width: 8
-  height: 10
+  width: 6
+  height: 7
   berries: 00000000010000000200000003000000
   scoretext: {fileID: 174430643}
 --- !u!4 &1616609106
@@ -1373,11 +1373,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 1616609105}
-  xScale: 80
-  yScale: 80
+  xScale: 120
+  yScale: 120
   xOffset: 0
-  yOffset: 10
-  berryScale: 0.7
+  yOffset: 0
+  berryScale: 1
 --- !u!114 &1616609108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,8 +1391,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   readytime: 3
-  countdowntime: 90
-  remainingtime: 90
+  countdowntime: 30
+  remainingtime: 30
   readyText: {fileID: 1987457290}
   countdownText: {fileID: 1721947453}
   goText: {fileID: 951711913}
