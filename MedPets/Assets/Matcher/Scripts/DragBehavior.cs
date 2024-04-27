@@ -6,9 +6,16 @@ using UnityEngine;
 
 public class DragBehavior : MonoBehaviour
 {
+    public AudioClip rightaudio;
+    public AudioClip wrongaudio;
+    private AudioSource audioSource;
+
+    
     public static int caffeinecount;
     public static int insulincount;
     public static int metformincount;
+    public static int corncount;
+    public static int flourcount;
 
     //This script is on a collider that follows the mouse/finger when that is an option
     [SerializeField]List<GameObject> dragged = new List<GameObject> ();
@@ -19,9 +26,21 @@ public class DragBehavior : MonoBehaviour
     [SerializeField] CircleCollider2D col;
     [SerializeField] LineRenderer line;
     Vector3 mouseWorldPos;
-    
+
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
+        Debug.Log("Caffeine count is: " + caffeinecount);
+        Debug.Log("Insulin count is: " + insulincount);
+        Debug.Log("Metformin count is: " + metformincount);
+        Debug.Log("Corn count is: " + corncount);
+        Debug.Log("Flour count is: " + flourcount);
+        
         mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f;
         transform.position = mouseWorldPos;
@@ -108,23 +127,27 @@ public class DragBehavior : MonoBehaviour
             {
                 loc[i, 0] = dragged[i].GetComponent<Berry>().getX();
                 loc[i, 1] = dragged[i].GetComponent<Berry>().getY();
+                int clearid = dragged[i].GetComponent<Berry>().getId();
+                switch(clearid){
+                    case 0:
+                        insulincount += 1;
+                        break;
+                    case 1:
+                        metformincount += 1;
+                        break;
+                    case 2:
+                        corncount += 1;
+                        break;
+                    case 3:
+                        flourcount += 1;
+                        break;
+                    default:
+                        break;
+                }
             }
             clearAdded();
-            int clearid = dragged[0].GetComponent<Berry>().getId();
-            switch(clearid){
-                case 0:
-                    insulincount += 3;
-                    break;
-                case 1:
-                    metformincount += 3;
-                    break;
-                case 2:
-                    caffeinecount += 3;
-                    break;
-                default:
-                    break;
-
-            }
+            audioSource.clip = rightaudio;
+            audioSource.Play();
             grid.addScore(dragged.Count * 100);
             grid.removeGroup(loc); //Make variable later for inventory
             dragged.Clear();
@@ -132,6 +155,8 @@ public class DragBehavior : MonoBehaviour
         else
         {
             clearAdded();
+            audioSource.clip = wrongaudio;
+            audioSource.Play();
             dragged.Clear();
         }
         line.positionCount = 0;
