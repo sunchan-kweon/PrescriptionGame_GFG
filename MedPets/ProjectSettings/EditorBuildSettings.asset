@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Medication_Selection.unity
+    guid: ee8d1aa7060cb0d4ebc811d3ae92fb77
+  - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
