@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Guide_Metformin.unity
     guid: 47a77869ff3b7854a96bdcaf85dae364
+  - enabled: 1
+    path: Assets/Scenes/Guide_Insulin.unity
+    guid: 32fd5309b33f7c540b7c5ea2ca747c65
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 6bd9befa2933a458e8f5061eb589d1ce, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 9394855437e30420591035d8a7c19af2, type: 2}
