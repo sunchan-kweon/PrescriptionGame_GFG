@@ -15,7 +15,7 @@ public class GameGrid : MonoBehaviour
     GameObject[,] board;
     [SerializeField] int width;
     [SerializeField] int height;
-    [SerializeField] int[] berries;
+    int[] berries;
 
     public static int score;
     public TextMeshProUGUI scoretext;
@@ -31,6 +31,7 @@ public class GameGrid : MonoBehaviour
     private void Start()
     {
         //INITIAL SETUP FOR BOARD SIZE AND FILLING
+        berries = PatientInfo.matcherIds;
         board = new GameObject[width, height];
         fillBoard(berries);
     }

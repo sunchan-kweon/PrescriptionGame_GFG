@@ -62,6 +62,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Guide_Metformin");
     }
 
+    public void ToInsulin()
+    {
+        audioSource.Play();
+        SceneManager.LoadScene("Guide_Insulin");
+    }
+
     // public void Credits()
     // {
     //     creditpanel.SetActive(true);
