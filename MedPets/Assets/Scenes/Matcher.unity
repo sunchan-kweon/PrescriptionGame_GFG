@@ -1343,7 +1343,6 @@ MonoBehaviour:
   parent: {fileID: 574654047}
   width: 6
   height: 7
-  berries: 00000000010000000200000003000000
   scoretext: {fileID: 174430643}
 --- !u!4 &1616609106
 Transform:
@@ -1391,8 +1390,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   readytime: 3
-  countdowntime: 30
-  remainingtime: 30
+  countdowntime: 90
+  remainingtime: 90
   readyText: {fileID: 1987457290}
   countdownText: {fileID: 1721947453}
   goText: {fileID: 951711913}

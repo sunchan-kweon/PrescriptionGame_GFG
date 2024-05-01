@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: 851738501}
   - component: {fileID: 851738500}
   m_Layer: 0
-  m_Name: Corn_FoodItem
+  m_Name: Water_FoodItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -966,7 +966,7 @@ GameObject:
   - component: {fileID: 921762581}
   - component: {fileID: 921762580}
   m_Layer: 0
-  m_Name: Flour_FoodItem
+  m_Name: Cake_FoodItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
