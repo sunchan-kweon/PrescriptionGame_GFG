@@ -49,6 +49,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Inventory");
     }
 
+    public void ToTutorial()
+    {
+        audioSource.Play();
+        SceneManager.LoadScene("Tutorial");
+    }
+
     //GUIDEBOOK STUFF
     public void ToGuidebook()
     {
