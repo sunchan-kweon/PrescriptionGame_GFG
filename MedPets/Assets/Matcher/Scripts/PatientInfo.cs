@@ -32,21 +32,21 @@ public static class PatientInfo
         switch (t)
         {
             case 0:
-                time1 = "Before Each Meal"; break;
+                time1 = "Antes de la comida"; break;
             case 1:
-                time1 = "After Each Meal"; break;
+                time1 = "Después de la comida"; break;
             case 2:
-                time1 = "Before Breakfast"; break;
+                time1 = "Antes del desayuno"; break;
             case 3:
-                time1 = "After Breakfast"; break;
+                time1 = "Después del desayuno"; break;
             case 4:
-                time1 = "Before Lunch"; break;
+                time1 = "Antes del almuerzo"; break;
             case 5:
-                time1 = "After Lunch"; break;
+                time1 = "Después del almuerzo"; break;
             case 6:
-                time1 = "Before Dinner"; break;
+                time1 = "Antes de la cena"; break;
             case 7:
-                time1 = "After Dinner"; break;
+                time1 = "Después de la cena"; break;
             default:
                 time1 = "None"; break;
         }
@@ -57,21 +57,21 @@ public static class PatientInfo
         switch (t)
         {
             case 0:
-                time2 = "Before Each Meal"; break;
+                time2 = "Antes de la comida"; break;
             case 1:
-                time2 = "After Each Meal"; break;
+                time2 = "Después de la comida"; break;
             case 2:
-                time2 = "Before Breakfast"; break;
+                time2 = "Antes del desayuno"; break;
             case 3:
-                time2 = "After Breakfast"; break;
+                time2 = "Después del desayuno"; break;
             case 4:
-                time2 = "Before Lunch"; break;
+                time2 = "Antes del almuerzo"; break;
             case 5:
-                time2 = "After Lunch"; break;
+                time2 = "Después del almuerzo"; break;
             case 6:
-                time2 = "Before Dinner"; break;
+                time2 = "Antes de la cena"; break;
             case 7:
-                time2 = "After Dinner"; break;
+                time2 = "Después de la cena"; break;
             default:
                 time2 = "None"; break;
         }
