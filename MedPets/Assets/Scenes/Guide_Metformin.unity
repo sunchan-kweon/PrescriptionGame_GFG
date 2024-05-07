@@ -325,7 +325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -95.994, y: 71.682}
+  m_AnchoredPosition: {x: -95.99402, y: 71.68201}
   m_SizeDelta: {x: 191.9885, y: 143.3373}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &143536834
@@ -637,7 +637,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Metformin is a medication to help regulate blood sugar
+  m_text: Metformina is a medication to help regulate blood sugar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e27ed57d4ab4afc4db622ee715aa10ea, type: 2}
   m_sharedMaterial: {fileID: -2342194830528103053, guid: e27ed57d4ab4afc4db622ee715aa10ea, type: 2}
@@ -1065,7 +1065,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: METFORMIN
+  m_text: 'METFORMINA
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb21592d2629653448d51ab6ab30e74d, type: 2}
   m_sharedMaterial: {fileID: -358671693933543634, guid: bb21592d2629653448d51ab6ab30e74d, type: 2}
