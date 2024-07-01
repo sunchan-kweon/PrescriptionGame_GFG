@@ -69,7 +69,7 @@ public class DragBehavior : MonoBehaviour
         }
     }*/
 
-    int checkList()
+    private int checkList()
     {
         if(dragged.Count > 0)
         {
@@ -78,6 +78,11 @@ public class DragBehavior : MonoBehaviour
             int toMatch = dragged[0].GetComponent<Berry>().getNum2Match();
             int[] ids = new int[holder.getSize()];
             int chains = 1;
+            List<string> tagsFound = new List<string>();
+            for (int k = 0; k < dragged[0].GetComponent<Berry>().getTags().Length; k++)
+            {
+                tagsFound.Add(dragged[0].GetComponent<Berry>().getTags()[k]);
+            }
 
             for (int i = 1; i < dragged.Count; i++)
             {
@@ -99,6 +104,10 @@ public class DragBehavior : MonoBehaviour
                             }
                         }
                         prevId = dragged[i].GetComponent<Berry>().getId();
+                        for(int k = 0; k < dragged[i].GetComponent<Berry>().getTags().Length; k++)
+                        {
+                            tagsFound.Add(dragged[i].GetComponent<Berry>().getTags()[k]);
+                        }
                         count = 0;
                         chains++;
                         toMatch = dragged[i].GetComponent<Berry>().getNum2Match();
@@ -107,6 +116,36 @@ public class DragBehavior : MonoBehaviour
             }
             count++;
             if (count != toMatch)
+            {
+                return -1;
+            }
+            //Tag Handling
+            //Each in List Dragged
+            for(int i = 0; i < dragged.Count; i++)
+            {
+                if(dragged[i].GetComponent<Berry>().getRequiredTags().Length > 0)
+                {
+                    //Each of the Required Tags
+                    for (int j = 0; j < dragged[i].GetComponent<Berry>().getRequiredTags().Length; j++)
+                    {
+                        bool found = false;
+                        //Each of the tags found
+                        for (int k = 0; k < tagsFound.Count; k++)
+                        {
+                            if (dragged[i].GetComponent<Berry>().getRequiredTags()[j].Equals(tagsFound[k]))
+                            {
+                                found = true;
+                                break;
+                            }
+                        }
+                        if (found == false)
+                        {
+                            return -1;
+                        }
+                    }
+                }
+            }
+            if(chains < 2)
             {
                 return -1;
             }
