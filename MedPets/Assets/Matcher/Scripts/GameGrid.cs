@@ -31,6 +31,7 @@ public class GameGrid : MonoBehaviour
     private void Start()
     {
         //INITIAL SETUP FOR BOARD SIZE AND FILLING
+        PatientInfo.setId(PatientInfo.medId);
         berries = PatientInfo.matcherIds;
         board = new GameObject[width, height];
         fillBoard(berries);
