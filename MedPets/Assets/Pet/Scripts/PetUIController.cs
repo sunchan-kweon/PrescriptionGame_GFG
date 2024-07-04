@@ -6,12 +6,15 @@ using UnityEngine.UI;
 public class PetUIController : MonoBehaviour
 {
     public Image foodImage;
-    public Image happinessImage;
+    public Slider bloodSliderImage;
     public Image energyImage;
+
+    public float maxSlider;
+    public float minSlider;
 
     private void Start()
     {
-        
+
     }
 
     //public static PetUIController instance;
@@ -30,10 +33,10 @@ public class PetUIController : MonoBehaviour
         foodImage.fillAmount = currentFood / maxFood;
     }
 
-    public void UpdateHappinessBar(float maxHappiness, float currentHappiness)
+    public void UpdateBloodBar(float currentBlood)
     {
         //Debug.Log(currentHappiness / maxHappiness);
-        happinessImage.fillAmount = currentHappiness / maxHappiness;
+        bloodSliderImage.value = currentBlood;
     }
 
     public void UpdateEnergyBar(float maxEnergy, float currentEnergy)
