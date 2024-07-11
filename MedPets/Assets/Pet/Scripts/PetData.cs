@@ -6,7 +6,7 @@ using UnityEngine;
 public class PetData
 {
     public int food;
-    public int happiness;
+    public int blood;
     public int energy;
 
     public bool playedOnce;
@@ -20,7 +20,7 @@ public class PetData
 
     public PetData(){
         food = NeedsController.food;
-        happiness = NeedsController.happiness;
+        blood = NeedsController.blood;
         energy = NeedsController.energy;
         playedOnce = NeedsController.playedOnce;
         caffeine = Inventory.caffeine;

@@ -94,7 +94,11 @@ MonoBehaviour:
   name: Insulin
   description: Insulin
   id: 0
-  incompatibility: 0100000003000000
+  tags:
+  - Medicine
+  incompatibility: 01000000
+  requiredTags:
+  - Drink
   doesGravity: 1
   numToMatch: 3
   locX: 0

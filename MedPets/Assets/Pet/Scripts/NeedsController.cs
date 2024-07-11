@@ -5,12 +5,12 @@ using UnityEngine;
 public class NeedsController : MonoBehaviour
 {
     public static int food;
-    public static int happiness;
+    public static int blood;
     public static int energy;
     public static bool playedOnce;
 
     public PetUIController foodBar;
-    public PetUIController happinessBar;
+    public PetUIController bloodBar;
     public PetUIController energyBar;
 
     public void SavePet()
@@ -23,7 +23,7 @@ public class NeedsController : MonoBehaviour
         PetData data = SaveSystem.LoadPet();
 
         food = data.food;
-        happiness = data.happiness;
+        blood = data.blood;
         energy = data.energy;
     }
 
@@ -35,7 +35,7 @@ public class NeedsController : MonoBehaviour
     public void Update()
     {
         foodBar.UpdateFoodBar(100, food);
-        happinessBar.UpdateHappinessBar(100, happiness);
+        bloodBar.UpdateBloodBar(blood);
         energyBar.UpdateEnergyBar(100, energy);
 
         if (TimingManager.gameHourTimer < 0)
@@ -60,18 +60,18 @@ public class NeedsController : MonoBehaviour
         
     }
 
-    public static void ChangeHappiness(int amount)
+    public static void ChangeBlood(int amount)
     {
-        happiness += amount;
+        blood += amount;
 
-        if (happiness <= 0)
+        if (blood <= 0)
         {
-            happiness = 0;
+            blood = 0;
             //PetController.Sad();
         }
-        else if (happiness >= 100)
+        else if (blood >= 100)
         {
-            happiness = 100;
+            blood = 100;
         }
 
     }

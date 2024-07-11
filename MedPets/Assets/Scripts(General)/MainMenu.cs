@@ -34,7 +34,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Matcher");
         NeedsController.food -= Random.Range(5,10);
         NeedsController.energy -= Random.Range(5,10);
-        NeedsController.happiness -= Random.Range(5,10);
+        NeedsController.blood -= Random.Range(5,10);
     }
 
     public void ToSettings()

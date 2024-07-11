@@ -45,7 +45,7 @@ public class Inventory : MonoBehaviour
         if(insulin > 0){
             insulin -= 1;
             //NeedsController.ChangeHappiness(10);
-            NeedsController.ChangeHappiness(-10);
+            NeedsController.ChangeBlood(-10);
             SavePet();
         }
     }
@@ -54,7 +54,7 @@ public class Inventory : MonoBehaviour
         if(metformin > 0){
             metformin -= 1;
             //NeedsController.ChangeEnergy(10);
-            NeedsController.ChangeHappiness(-10);
+            NeedsController.ChangeBlood(-10);
             SavePet();
         }
     }
@@ -63,7 +63,7 @@ public class Inventory : MonoBehaviour
         if(corn > 0){
             corn -= 1;
             NeedsController.ChangeFood(10);
-            NeedsController.ChangeHappiness(-10);
+            NeedsController.ChangeBlood(-10);
             SavePet();
         }
     }
@@ -72,7 +72,7 @@ public class Inventory : MonoBehaviour
         if(flour > 0){
             flour -= 1;
             NeedsController.ChangeFood(20);
-            NeedsController.ChangeHappiness(10);
+            NeedsController.ChangeBlood(10);
             SavePet();
         }
     }

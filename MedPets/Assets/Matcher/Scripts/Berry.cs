@@ -8,8 +8,10 @@ public class Berry : MonoBehaviour
     [SerializeField] string description;
     //Make sure this is the Index in the Berry Holder script in BoardManager
     [SerializeField] int id;
+    [SerializeField] string[] tags;
     //Ids of incompatible berries
     [SerializeField] int[] incompatibility;
+    [SerializeField] string[] requiredTags;
     [SerializeField] bool doesGravity;
     [SerializeField] int numToMatch;
     public int locX;
@@ -76,5 +78,15 @@ public class Berry : MonoBehaviour
     public int getY()
     {
         return locY;
+    }
+
+    public string[] getTags()
+    {
+        return tags;
+    }
+
+    public string[] getRequiredTags()
+    {
+        return requiredTags;
     }
 }

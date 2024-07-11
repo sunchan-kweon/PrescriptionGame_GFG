@@ -92,9 +92,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Metformin
-  description: Image Metformin
+  description: Metformin
   id: 1
-  incompatibility: 0000000003000000
+  tags:
+  - Medicine
+  incompatibility: 00000000
+  requiredTags:
+  - Food
   doesGravity: 1
   numToMatch: 3
   locX: 0

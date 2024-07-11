@@ -17,6 +17,11 @@ public class BerryHolder : MonoBehaviour
     {
         return container.Length;
     }
-
-    
 }
+
+/*
+ * LIST OF TAGS CURRENTLY IN GAME
+ * 
+ * N/A
+ * 
+ */

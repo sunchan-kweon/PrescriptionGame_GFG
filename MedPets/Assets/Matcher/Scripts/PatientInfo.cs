@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class PatientInfo
 {
-    public static int medId;
+    public static int medId = 0;
     public static string medAmount;
     public static int[] matcherIds;
     public static string time1;
