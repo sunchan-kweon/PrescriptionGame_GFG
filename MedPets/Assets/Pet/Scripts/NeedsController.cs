@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class NeedsController : MonoBehaviour
 {
+    //Status of pet
     public static int food;
     public static int happiness;
     public static int energy;
     public static bool playedOnce;
 
+    //UI reference to status
     public PetUIController foodBar;
     public PetUIController happinessBar;
     public PetUIController energyBar;
 
+    //Save pet data to save file
     public void SavePet()
     {
         SaveSystem.SavePet();
     }
 
+    //Load pet data to save file
     public void LoadPet()
     {
         PetData data = SaveSystem.LoadPet();
@@ -32,6 +36,7 @@ public class NeedsController : MonoBehaviour
          
     }
 
+    //Update UI corresponding to pet status
     public void Update()
     {
         foodBar.UpdateFoodBar(100, food);
@@ -44,6 +49,7 @@ public class NeedsController : MonoBehaviour
         }
     }
 
+    //Change satiety level based on actions taken (item, playing)
     public static void ChangeFood(int amount)
     {
         food += amount;
@@ -60,6 +66,7 @@ public class NeedsController : MonoBehaviour
         
     }
 
+    //Change blood sugar level based on actions taken (item, playing)
     public static void ChangeHappiness(int amount)
     {
         happiness += amount;
@@ -76,6 +83,7 @@ public class NeedsController : MonoBehaviour
 
     }
 
+    //Change energy level based on actions taken (item, playing)
     public static void ChangeEnergy(int amount)
     {
         energy += amount;

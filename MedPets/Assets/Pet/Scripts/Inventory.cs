@@ -5,6 +5,7 @@ using TMPro;
 
 public class Inventory : MonoBehaviour
 {
+    //Integer values of items and their text UI
     public static int caffeine;
     public static int insulin;
     public static int metformin;
@@ -17,11 +18,13 @@ public class Inventory : MonoBehaviour
     public TextMeshProUGUI cornnum;
     public TextMeshProUGUI flournum;
 
+    //Save item data to save file
     public void SavePet()
     {
         SaveSystem.SavePet();
     }
 
+    //Load item data from save file
     public void LoadPet()
     {
         PetData data = SaveSystem.LoadPet();
@@ -33,6 +36,7 @@ public class Inventory : MonoBehaviour
         flour = data.flour;
     }
 
+    //Use caffeine to increase energy
     public void UseCaffeine(){
         if(caffeine > 0){
             caffeine -= 1;
@@ -41,6 +45,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    //Use insulin to decrease blood sugar
     public void UseInsulin(){
         if(insulin > 0){
             insulin -= 1;
@@ -50,6 +55,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    //Use metformin to decrease blood sugar
     public void UseMetformin(){
         if(metformin > 0){
             metformin -= 1;
@@ -59,6 +65,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    //Use corn to increase satiety and decrease blood sugar
     public void UseCorn(){
         if(corn > 0){
             corn -= 1;
@@ -68,6 +75,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    //Use flour to increase satiety and increase blood sugar
     public void UseFlour(){
         if(flour > 0){
             flour -= 1;
@@ -83,7 +91,7 @@ public class Inventory : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // Update UI with number of items
     void Update()
     {
         //caffeinenum.text = caffeine.ToString("D2");

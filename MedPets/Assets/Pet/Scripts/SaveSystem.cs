@@ -4,6 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
+    //Save inventory data in a save file and change it to binary format
     public static void SavePet()
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -16,6 +17,7 @@ public static class SaveSystem
         stream.Close();
     }
 
+    //Load inventory data if save file exists, change format back to normal format
     public static PetData LoadPet(){
         string path = Application.persistentDataPath + "/pet.exe";
         if(File.Exists(path)){
