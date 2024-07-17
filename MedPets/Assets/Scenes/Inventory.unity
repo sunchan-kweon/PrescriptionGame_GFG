@@ -1595,10 +1595,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 0}
   m_HandleRect: {fileID: 1994943779}
   m_Direction: 0
-  m_MinValue: 80
-  m_MaxValue: 140
+  m_MinValue: 0
+  m_MaxValue: 220
   m_WholeNumbers: 0
-  m_Value: 80
+  m_Value: 87
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2207,6 +2207,10 @@ PrefabInstance:
       propertyPath: energyBar
       value: 
       objectReference: {fileID: 671628521}
+    - target: {fileID: 7087298825469928520, guid: 356148769bbb13e4f9f69cd52fe626c1, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1992921736}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2217,6 +2221,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4737557286364511753, guid: 356148769bbb13e4f9f69cd52fe626c1, type: 3}
   m_PrefabInstance: {fileID: 1992921729}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1992921736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3861837063844743583, guid: 356148769bbb13e4f9f69cd52fe626c1, type: 3}
+  m_PrefabInstance: {fileID: 1992921729}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1617d7df7a8baa74a8dfc72af025a4f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1994943778
 GameObject:
   m_ObjectHideFlags: 0

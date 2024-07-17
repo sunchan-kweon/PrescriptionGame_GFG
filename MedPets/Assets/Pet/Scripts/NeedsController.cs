@@ -13,6 +13,8 @@ public class NeedsController : MonoBehaviour
     public PetUIController bloodBar;
     public PetUIController energyBar;
 
+    public PetController controller;
+
     public void SavePet()
     {
         SaveSystem.SavePet();
@@ -27,11 +29,6 @@ public class NeedsController : MonoBehaviour
         energy = data.energy;
     }
 
-    public void Start()
-    {
-         
-    }
-
     public void Update()
     {
         foodBar.UpdateFoodBar(100, food);
@@ -41,6 +38,30 @@ public class NeedsController : MonoBehaviour
         if (TimingManager.gameHourTimer < 0)
         {
             //PetUIController.instance.UpdateImages(food);
+        }
+
+        if (food <= 20)
+        {
+            controller.Hungry();
+        }
+
+        if(blood < 80)
+        {
+            controller.Sad();
+        }
+        else if(blood > 140)
+        {
+            controller.Sad();
+        }
+
+        if(energy <= 20)
+        {
+            controller.Bored();
+        }
+
+        if(food >= 80 && blood > 80 && blood < 140 && energy >= 80)
+        {
+            controller.Happy();
         }
     }
 

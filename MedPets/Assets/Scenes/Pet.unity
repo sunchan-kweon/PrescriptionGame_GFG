@@ -1861,10 +1861,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 0}
   m_HandleRect: {fileID: 105518807}
   m_Direction: 0
-  m_MinValue: 80
-  m_MaxValue: 140
+  m_MinValue: 0
+  m_MaxValue: 220
   m_WholeNumbers: 0
-  m_Value: 80
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2244,6 +2244,10 @@ PrefabInstance:
       propertyPath: happiness
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 7087298825469928520, guid: 356148769bbb13e4f9f69cd52fe626c1, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 699360775}
     - target: {fileID: 7087298825469928520, guid: 356148769bbb13e4f9f69cd52fe626c1, type: 3}
       propertyPath: foodTickRate
       value: 20

@@ -5,19 +5,11 @@ using UnityEngine;
 public class PetController : MonoBehaviour
 {
     public Animator petAnimator;
-    
-    // Start is called before the first frame update
-    void Start()
+ 
+    public void Bored()
     {
-        
+        petAnimator.SetTrigger("Bored");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Happy()
     {
         petAnimator.SetTrigger("Happy");
@@ -28,8 +20,8 @@ public class PetController : MonoBehaviour
         petAnimator.SetTrigger("Sad");
     }
 
-    public void Eat()
+    public void Hungry()
     {
-
+        petAnimator.SetTrigger("Hungry");
     }
 }
