@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NeedsController : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class NeedsController : MonoBehaviour
     public PetUIController energyBar;
 
     public PetController controller;
+    public GameObject playGlow;
+    public GameObject meterGlow;
 
     public void SavePet()
     {
@@ -57,6 +60,26 @@ public class NeedsController : MonoBehaviour
         if(energy <= 20)
         {
             controller.Bored();
+            if(playGlow != null)
+            {
+                playGlow.SetActive(true);
+            }
+            if(meterGlow != null)
+            {
+                meterGlow.SetActive(true);
+            }
+            
+        }
+        else
+        {
+            if (playGlow != null)
+            {
+                playGlow.SetActive(false);
+            }
+            if (meterGlow != null)
+            {
+                meterGlow.SetActive(false);
+            }
         }
 
         if(food >= 80 && blood > 80 && blood < 140 && energy >= 80)
