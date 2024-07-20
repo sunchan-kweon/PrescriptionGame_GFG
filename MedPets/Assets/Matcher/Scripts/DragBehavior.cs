@@ -55,20 +55,6 @@ public class DragBehavior : MonoBehaviour
         }
     }
 
-    /*private void OnCollisionEnter2D(Collision2D collider)
-    {
-        if (dragging)
-        {
-            if(collider.gameObject.GetComponent<Berry>().added == false)
-            {
-                dragged.Add(collider.gameObject);
-                collider.gameObject.GetComponent<Berry>().added = true;
-                drawLines();
-            }
-            
-        }
-    }*/
-
     private int checkList()
     {
         if(dragged.Count > 0)
@@ -199,6 +185,7 @@ public class DragBehavior : MonoBehaviour
             dragged.Clear();
         }
         line.positionCount = 0;
+        clearAdded();
     }
 
     public void drawLines()
@@ -226,7 +213,7 @@ public class DragBehavior : MonoBehaviour
     {
         for (int i = 0; i < dragged.Count; i++)
         {
-            dragged[i].GetComponent<Berry>().added = false;
+            dragged[i].GetComponent<Berry>().setAdded(false);
         }
     }
 

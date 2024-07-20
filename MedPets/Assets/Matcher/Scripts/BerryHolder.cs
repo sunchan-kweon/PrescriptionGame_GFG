@@ -22,6 +22,12 @@ public class BerryHolder : MonoBehaviour
 /*
  * LIST OF TAGS CURRENTLY IN GAME
  * 
- * N/A
+ * Carb
+ * Protein
+ * Fat
+ * Medicine
+ * Fiber
+ * Natural Sugar
+ * Refined Sugar
  * 
  */

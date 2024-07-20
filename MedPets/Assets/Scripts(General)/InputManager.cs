@@ -26,10 +26,10 @@ public class InputManager : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up);
             if (hit.collider != null)
             {
-                if (drag.isDragging() && hit.collider.gameObject.GetComponent<Berry>().added == false)
+                if (drag.isDragging() && hit.collider.gameObject.GetComponent<Berry>().getAdded() == false)
                 {
                     drag.addDragged(gameObject);
-                    hit.collider.gameObject.GetComponent<Berry>().added = true;
+                    hit.collider.gameObject.GetComponent<Berry>().setAdded(true);
                     drag.drawLines();
                 }
             }

@@ -15,10 +15,10 @@ public class TouchOver : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (drag.isDragging() && berry.added == false)
+        if (drag.isDragging() && berry.getAdded() == false)
         {
             drag.addDragged(gameObject);
-            berry.added = true;
+            berry.setAdded(true);
             drag.drawLines();
         }
         
