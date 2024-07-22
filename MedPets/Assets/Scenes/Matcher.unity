@@ -2041,6 +2041,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightaudio: {fileID: 8300000, guid: e996b6f7e4073414c9e7698a3ca48cd3, type: 3}
   wrongaudio: {fileID: 8300000, guid: 6f4816be576fb4ca995aee40d4ce70a2, type: 3}
+  correct: {r: 0.48584908, g: 1, b: 0.5104015, a: 1}
+  wrong: {r: 1, g: 0.81722337, b: 0.2783019, a: 1}
   dragged: []
   grid: {fileID: 1616609105}
   mover: {fileID: 1616609107}

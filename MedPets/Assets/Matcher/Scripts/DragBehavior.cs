@@ -17,6 +17,9 @@ public class DragBehavior : MonoBehaviour
     public static int corncount;
     public static int flourcount;
 
+    public Color correct;
+    public Color wrong;
+
     //This script is on a collider that follows the mouse/finger when that is an option
     [SerializeField]List<GameObject> dragged = new List<GameObject> ();
     bool dragging = false;
@@ -192,13 +195,13 @@ public class DragBehavior : MonoBehaviour
     {
         if(checkList() >= 0)
         {
-            line.startColor = Color.green;
-            line.endColor = Color.green;
+            line.startColor = correct;
+            line.endColor = correct;
         }
         else
         {
-            line.startColor = Color.red;
-            line.endColor = Color.red;
+            line.startColor = wrong;
+            line.endColor = wrong;
         }
         Vector3[] linePos = new Vector3[dragged.Count];
         line.positionCount = dragged.Count;
