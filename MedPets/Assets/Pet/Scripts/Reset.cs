@@ -4,20 +4,12 @@ using UnityEngine;
 
 public class Reset : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         GameGrid.score = 0;
-        DragBehavior.insulincount = 0;
-        DragBehavior.caffeinecount = 0;
-        DragBehavior.metformincount = 0;
-        DragBehavior.corncount = 0;
-        DragBehavior.flourcount = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for(int i = 0; i < DragBehavior.itemCounts.Length; i++)
+        {
+            DragBehavior.itemCounts[i] = 0;
+        }
     }
 }

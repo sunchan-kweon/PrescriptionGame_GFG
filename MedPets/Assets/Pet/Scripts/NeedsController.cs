@@ -95,7 +95,6 @@ public class NeedsController : MonoBehaviour
         if (food <= 0)
         {
             food = 0;
-            //PetController.Sad();
         } 
         else if (food >= 100)
         {
@@ -111,7 +110,6 @@ public class NeedsController : MonoBehaviour
         if (blood <= 0)
         {
             blood = 0;
-            //PetController.Sad();
         }
         else if (blood >= 100)
         {
@@ -127,7 +125,6 @@ public class NeedsController : MonoBehaviour
         if (energy <= 0)
         {
             energy = 0;
-            //PetController.Sad();
         }
         else if (energy >= 100)
         {

@@ -6,52 +6,88 @@ using TMPro;
 public class Result : MonoBehaviour
 {
     public TextMeshProUGUI scoretext;
-    public TextMeshProUGUI corncounttext;
-    public TextMeshProUGUI flourcounttext;
-    public TextMeshProUGUI metformincounttext;
-    public TextMeshProUGUI insulincounttext;
+    public GameObject textPrefab;
+    public BerryHolder holder;
+    public Transform parent;
+    private int count;
 
-    public int cornresult;
-    public int flourresult;
-    public int metforminresult;
-    public int insulinresult;
-    public int caffeineresult;
+    public float spawnX;
+    public float spawnY;
+    public float scaleX;
+    public float scaleY;
+    public float spacing;
+    public float scrollSpeed;
 
-    // Start is called before the first frame update
+    public int[] results;
+
+    private int maxPan;
+    private int pan;
+    private float posX;
+    private float currentPosX;
+
     void Start()
     {
-
-        caffeineresult = DragBehavior.caffeinecount / 6;
-        insulinresult = DragBehavior.insulincount / 9;
-        metforminresult = DragBehavior.metformincount / 9;
-        cornresult = DragBehavior.corncount / 9;
-        flourresult = DragBehavior.corncount / 9;
-
+        posX = parent.localPosition.x;
+        results = new int[BerryHolder.itemCount];
+        for (int i = 0; i < results.Length; i++)
+        {
+            results[i] = DragBehavior.itemCounts[i] / 9;
+            Inventory.items[i] += results[i];
+            if (results[i] > 0)
+            {
+                maxPan++;
+                GameObject current = Instantiate(holder.getBerry(i), new Vector2(spawnX + (count * spacing), spawnY), Quaternion.identity, parent);
+                current.GetComponent<Berry>().enabled = false;
+                current.GetComponent<TouchOver>().enabled = false;
+                current.GetComponent<CircleCollider2D>().enabled = false;
+                current.GetComponent<GravityChecker>().enabled = false;
+                current.GetComponent<RectTransform>().localScale = new Vector2(scaleX, scaleY);
+                current.GetComponent<RectTransform>().localPosition = new Vector2(spawnX + (count * spacing), spawnY);
+                current = Instantiate(textPrefab, new Vector2(spawnX + (count * spacing), spawnY), Quaternion.identity, parent);
+                current.GetComponent<RectTransform>().localPosition = new Vector2(spawnX + (count * spacing) + 175, spawnY - 100);
+                current.GetComponent<TextMeshProUGUI>().text += results[i];
+                count++;
+            }
+        }
         scoretext.text = GameGrid.score.ToString("D6");
-
-        Inventory.caffeine += caffeineresult;
-        Inventory.insulin += insulinresult;
-        Inventory.metformin += metforminresult;
-        Inventory.corn += cornresult;
-        Inventory.flour += flourresult;
-
-        Debug.Log(cornresult);
-        Debug.Log(flourresult);
-        Debug.Log(metforminresult);
-        Debug.Log(insulinresult);
-        Debug.Log(caffeineresult);
-
-        corncounttext.text = cornresult.ToString("D2");
-        flourcounttext.text = flourresult.ToString("D2");
-        metformincounttext.text = metforminresult.ToString("D2");
-        insulincounttext.text = insulinresult.ToString("D2");
 
         SaveSystem.SavePet();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void right()
     {
-        
+        if(pan < maxPan - 1)
+        {
+            posX = posX - spacing;
+            pan++;
+        }
     }
+
+    public void left()
+    {
+        if (pan > 0)
+        {
+            posX = posX + spacing;
+            pan--;
+        }
+    }
+
+    private void Update()
+    {
+        parent.localPosition = new Vector2(currentPosX, parent.localPosition.y);
+        if(currentPosX > posX)
+        {
+            currentPosX -= scrollSpeed;
+        }
+        else if(currentPosX < posX)
+        {
+            currentPosX += scrollSpeed;
+        }
+
+        if ((currentPosX - posX < 3 && currentPosX - posX >= 0) || (currentPosX - posX > -3 && currentPosX - posX <= 0))
+        {
+            currentPosX = posX;
+        }
+    }
+
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DragBehavior : MonoBehaviour
 {
@@ -10,12 +11,7 @@ public class DragBehavior : MonoBehaviour
     public AudioClip wrongaudio;
     private AudioSource audioSource;
 
-    
-    public static int caffeinecount;
-    public static int insulincount;
-    public static int metformincount;
-    public static int corncount;
-    public static int flourcount;
+    public static int[] itemCounts;
 
     public Color correct;
     public Color wrong;
@@ -28,21 +24,19 @@ public class DragBehavior : MonoBehaviour
     [SerializeField] BerryHolder holder;
     [SerializeField] CircleCollider2D col;
     [SerializeField] LineRenderer line;
+    [SerializeField] GameObject collectedPrefab;
+    [SerializeField] RectTransform parent;
     Vector3 mouseWorldPos;
 
 
-    void Start()
+    void Awake()
     {
+        itemCounts = new int[BerryHolder.itemCount];
         audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        Debug.Log("Caffeine count is: " + caffeinecount);
-        Debug.Log("Insulin count is: " + insulincount);
-        Debug.Log("Metformin count is: " + metformincount);
-        Debug.Log("Corn count is: " + corncount);
-        Debug.Log("Flour count is: " + flourcount);
         
         mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f;
@@ -155,29 +149,23 @@ public class DragBehavior : MonoBehaviour
             {
                 loc[i, 0] = dragged[i].GetComponent<Berry>().getX();
                 loc[i, 1] = dragged[i].GetComponent<Berry>().getY();
-                int clearid = dragged[i].GetComponent<Berry>().getId();
-                switch(clearid){
-                    case 0:
-                        insulincount += 1;
-                        break;
-                    case 1:
-                        metformincount += 1;
-                        break;
-                    case 2:
-                        corncount += 1;
-                        break;
-                    case 3:
-                        flourcount += 1;
-                        break;
-                    default:
-                        break;
-                }
             }
             clearAdded();
             audioSource.clip = rightaudio;
             audioSource.Play();
             grid.addScore(dragged.Count * 100);
-            grid.removeGroup(loc); //Make variable later for inventory
+            int [] removed = grid.removeGroup(loc);
+            int count = 0;
+            for(int i = 0; i < removed.Length; i++)
+            {
+                int currentCount = itemCounts[i];
+                itemCounts[i] += removed[i];
+                if (itemCounts[i] % 9 == 0 && itemCounts[i] != currentCount)
+                {
+                    StartCoroutine(spawning(count, i));
+                    count++;
+                }
+            }
             dragged.Clear();
         }
         else
@@ -185,10 +173,16 @@ public class DragBehavior : MonoBehaviour
             clearAdded();
             audioSource.clip = wrongaudio;
             audioSource.Play();
-            dragged.Clear();
         }
-        line.positionCount = 0;
         clearAdded();
+    }
+
+    IEnumerator spawning(int i, int id)
+    {
+        yield return new WaitForSeconds(1.5f * i);
+        GameObject collected = Instantiate(collectedPrefab, parent.transform);
+        collected.GetComponent<RectTransform>().position = gameObject.transform.position;
+        collected.GetComponent<Image>().sprite = holder.getBerry(id).GetComponent<Image>().sprite;
     }
 
     public void drawLines()
@@ -218,6 +212,8 @@ public class DragBehavior : MonoBehaviour
         {
             dragged[i].GetComponent<Berry>().setAdded(false);
         }
+        dragged.Clear();
+        line.positionCount = 0;
     }
 
     public void onDown()

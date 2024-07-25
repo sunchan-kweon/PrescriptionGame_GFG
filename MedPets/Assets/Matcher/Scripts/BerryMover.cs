@@ -13,26 +13,6 @@ public class BerryMover : MonoBehaviour
     [SerializeField] float berryScale;
 
 
-
-    public void updateBoard()
-    {
-        /*for(int x = 0; x < grid.getWidth(); x++)
-        {
-            for (int y = grid.getHeight() - 1; y >= 0; y--)
-            {
-                if(grid.get(x,y) != null)
-                {
-                    GameObject current = grid.get(x, y);
-                    if (current.transform.position.x != conX(x) || current.transform.position.y != conY(y))
-                    {
-                        current.transform.position = new Vector3(conX(x), conY(y) + 50, 0);
-                    }
-                }
-            }
-        }*/
-
-    }
-
     public float getScale()
     {
         return berryScale;

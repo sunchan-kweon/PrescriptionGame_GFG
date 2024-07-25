@@ -16,8 +16,10 @@ public class Timer : MonoBehaviour
     public GameObject goText;
     public GameObject finishText;
     public GameObject pausePanel;
+    public GameObject resultsPanel;
 
     public bool isPaused = false;
+    public GameGrid gameGrid;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class Timer : MonoBehaviour
         remainingtime = countdowntime;
         readyText.text = readytime.ToString("F0");
         countdownText.text = countdowntime.ToString("F0");
+        gameGrid.enabled = false;
     }
 
     // Update is called once per frame
@@ -47,6 +50,7 @@ public class Timer : MonoBehaviour
             if(readytime <= 0)
             {
                 goText.SetActive(false);
+                gameGrid.enabled = true;
                 countdowntime -= Time.deltaTime;
                 countdownText.text = countdowntime.ToString("F0");
             }
@@ -55,11 +59,12 @@ public class Timer : MonoBehaviour
             {
                 finishText.SetActive(true);
                 countdownText.text = "0";
+                gameGrid.enabled = false;
             }
 
             if(countdowntime <= -3)
-            { 
-                SceneManager.LoadScene("Result");
+            {
+                resultsPanel.SetActive(true);
             }
 
         }

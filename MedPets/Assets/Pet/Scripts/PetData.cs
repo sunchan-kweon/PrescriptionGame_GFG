@@ -11,11 +11,7 @@ public class PetData
 
     public bool playedOnce;
 
-    public int caffeine;
-    public int insulin;
-    public int metformin;
-    public int corn;
-    public int flour;
+    public int[] items;
 
 
     public PetData(){
@@ -23,10 +19,9 @@ public class PetData
         blood = NeedsController.blood;
         energy = NeedsController.energy;
         playedOnce = NeedsController.playedOnce;
-        caffeine = Inventory.caffeine;
-        insulin = Inventory.insulin;
-        metformin = Inventory.metformin;
-        corn = Inventory.corn;
-        flour = Inventory.flour;
+        for(int i = 0; i < items.Length; i++)
+        {
+            items[i] = Inventory.items[i];
+        }
     }
 }

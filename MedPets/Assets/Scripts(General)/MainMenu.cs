@@ -7,6 +7,9 @@ public class MainMenu : MonoBehaviour
 {
     public AudioClip clickaudio;
     private AudioSource audioSource;
+    public GameObject mask;
+    public GameObject maskPrefab;
+    public RectTransform parent;
     // public GameObject howtopanel;
     // public GameObject creditpanel;
 
@@ -31,9 +34,17 @@ public class MainMenu : MonoBehaviour
     public void ToPuzzle()
     {
         audioSource.Play();
-        SceneManager.LoadScene("Matcher");
-        NeedsController.food -= Random.Range(5,10);
-        NeedsController.energy -= Random.Range(5,10);
+        if (mask != null)
+        {
+            StartCoroutine(Fade());
+        }
+        else
+        {
+            mask = Instantiate(maskPrefab, parent);
+            StartCoroutine(Fade());
+        }
+        NeedsController.food -= Random.Range(10,20);
+        NeedsController.energy += Random.Range(20,40);
         NeedsController.blood -= Random.Range(5,10);
     }
 
@@ -72,6 +83,14 @@ public class MainMenu : MonoBehaviour
     {
         audioSource.Play();
         SceneManager.LoadScene("Guide_Insulin");
+    }
+
+    IEnumerator Fade()
+    {
+        mask.SetActive(true);
+        yield return new WaitForSeconds(2.1f);
+        SceneManager.LoadScene("Matcher");
+
     }
 
     // public void Credits()

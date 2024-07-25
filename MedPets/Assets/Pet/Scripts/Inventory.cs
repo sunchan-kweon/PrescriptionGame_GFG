@@ -1,45 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class Inventory : MonoBehaviour
 {
-    public static int caffeine;
-    public static int insulin;
-    public static int metformin;
-    public static int corn;
-    public static int flour;
+    public static int[] items;
+    private bool started = false;
 
-    //public TextMeshProUGUI caffeinenum;
-    public TextMeshProUGUI insulinnum;
-    public TextMeshProUGUI metforminnum;
-    public TextMeshProUGUI cornnum;
-    public TextMeshProUGUI flournum;
 
-    public void SavePet()
+    private void Start()
+    {
+        if(started == false)
+        {
+            items = new int[BerryHolder.itemCount];
+            started = true;
+        }
+    }
+
+    public static void SavePet()
     {
         SaveSystem.SavePet();
     }
 
-    public void LoadPet()
+    public static void LoadPet()
     {
         PetData data = SaveSystem.LoadPet();
 
-        caffeine = data.caffeine;
-        insulin = data.insulin;
-        metformin = data.metformin;
-        corn = data.corn;
-        flour = data.flour;
-    }
-
-    public void UseCaffeine(){
-        if(caffeine > 0){
-            caffeine -= 1;
-            NeedsController.ChangeEnergy(10);
-            SavePet();
+        for(int i = 0; i < items.Length;)
+        {
+            items[i] = data.items[i];
         }
     }
+    
+    /*
 
     public void UseInsulin(){
         if(insulin > 0){
@@ -76,20 +69,5 @@ public class Inventory : MonoBehaviour
             SavePet();
         }
     }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //caffeinenum.text = caffeine.ToString("D2");
-        insulinnum.text = insulin.ToString("D2");
-        metforminnum.text = metformin.ToString("D2");
-        cornnum.text = corn.ToString("D2");
-        flournum.text = flour.ToString("D2");
-    }
+    */
 }

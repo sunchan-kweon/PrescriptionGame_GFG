@@ -53,7 +53,6 @@ public class GameGrid : MonoBehaviour
                 }
             }
         }
-        mover.updateBoard();
     }
 
 
@@ -102,7 +101,7 @@ public class GameGrid : MonoBehaviour
         }
         gravity();
         fillBoard(berries);
-        mover.updateBoard();
+        addScore((int)(removed.Length * (removed.Length * 0.8)));
         return removed;
 
     }
