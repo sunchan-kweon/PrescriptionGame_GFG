@@ -47,7 +47,7 @@ public class GameGrid : MonoBehaviour
                 {
                     board[x, y] = Instantiate(holder.getBerry(ids[Random.Range(0, ids.Length)]), new Vector2(mover.conX(x), (mover.conY(y)) + 400), Quaternion.identity, parent);
                     board[x, y].GetComponent<RectTransform>().localScale = new Vector2(mover.getScale(), mover.getScale());
-                    board[x, y].GetComponent<RectTransform>().localPosition = new Vector2(mover.conX(x), mover.conY(y) + 400);
+                    board[x, y].GetComponent<RectTransform>().localPosition = new Vector2(mover.conX(x), mover.conY(y) + 800 + Random.Range(0, 50));
                     board[x, y].GetComponent<Berry>().locX = x;
                     board[x, y].GetComponent<Berry>().locY = y;
                 }

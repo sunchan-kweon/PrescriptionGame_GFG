@@ -49,7 +49,6 @@ public class Timer : MonoBehaviour
         
             if(readytime <= 0)
             {
-                goText.SetActive(false);
                 gameGrid.enabled = true;
                 countdowntime -= Time.deltaTime;
                 countdownText.text = countdowntime.ToString("F0");

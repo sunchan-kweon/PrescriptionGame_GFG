@@ -14,7 +14,7 @@ public static class PatientInfo
     public static void setId(int id)
     {
         medId = id;
-        matcherIds = new int[] { id, 2, 3, 4, 5};
+        matcherIds = new int[] { id, 7, 10, 4, 5};
     }
 
     public static void setMedAmount(string amount)
