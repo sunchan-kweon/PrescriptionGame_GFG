@@ -508,6 +508,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mask
       objectReference: {fileID: 0}
+    - target: {fileID: 883431145548915850, guid: 2455bdeec33738d4f986d62522d55ba5, type: 3}
+      propertyPath: m_ShowMaskGraphic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460824651092458810, guid: 2455bdeec33738d4f986d62522d55ba5, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5129649035268185680, guid: 2455bdeec33738d4f986d62522d55ba5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -534,7 +542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5129649035268185680, guid: 2455bdeec33738d4f986d62522d55ba5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 357.7
+      value: 123.5
       objectReference: {fileID: 0}
     - target: {fileID: 5129649035268185680, guid: 2455bdeec33738d4f986d62522d55ba5, type: 3}
       propertyPath: m_SizeDelta.y
@@ -587,6 +595,18 @@ PrefabInstance:
     - target: {fileID: 5129649035268185680, guid: 2455bdeec33738d4f986d62522d55ba5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914979492316973518, guid: 2455bdeec33738d4f986d62522d55ba5, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914979492316973518, guid: 2455bdeec33738d4f986d62522d55ba5, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914979492316973518, guid: 2455bdeec33738d4f986d62522d55ba5, type: 3}
+      propertyPath: m_UseSpriteMesh
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6399643272284717718, guid: 2455bdeec33738d4f986d62522d55ba5, type: 3}
       propertyPath: timer

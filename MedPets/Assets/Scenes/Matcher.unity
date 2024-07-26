@@ -1898,7 +1898,7 @@ MonoBehaviour:
   scaleX: 4
   scaleY: 4
   spacing: 420
-  scrollSpeed: 4
+  scrollSpeed: 18
   results: 
 --- !u!1 &951711913
 GameObject:

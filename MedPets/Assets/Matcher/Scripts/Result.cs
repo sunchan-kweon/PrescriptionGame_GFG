@@ -84,7 +84,7 @@ public class Result : MonoBehaviour
             currentPosX += scrollSpeed;
         }
 
-        if ((currentPosX - posX < 3 && currentPosX - posX >= 0) || (currentPosX - posX > -3 && currentPosX - posX <= 0))
+        if ((currentPosX - posX < 10 && currentPosX - posX >= 0) || (currentPosX - posX > -10 && currentPosX - posX <= 0))
         {
             currentPosX = posX;
         }

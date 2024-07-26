@@ -14,7 +14,7 @@ public class MoveCollected : MonoBehaviour
     {
         direction = (new Vector2(x, y) - gameObject.GetComponent<RectTransform>().anchoredPosition);
         gameObject.GetComponent<RectTransform>().anchoredPosition += direction.normalized * speed;
-        if(direction.x < 5 && direction.y < 5 && direction.x > -5 && direction.y > -5)
+        if(direction.x < 10 && direction.y < 10 && direction.x > -10 && direction.y > -10)
         {
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(x, y);
         }
