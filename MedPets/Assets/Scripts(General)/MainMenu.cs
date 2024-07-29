@@ -45,7 +45,7 @@ public class MainMenu : MonoBehaviour
         }
         NeedsController.food -= Random.Range(10,20);
         NeedsController.energy += Random.Range(20,40);
-        NeedsController.blood -= Random.Range(5,10);
+        NeedsController.blood -= Random.Range(20, 40);
     }
 
     public void ToSettings()
