@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Berry : MonoBehaviour
 {
@@ -16,7 +17,11 @@ public class Berry : MonoBehaviour
     [SerializeField] int numToMatch;
     public int locX;
     public int locY;
+    public float foodAmount;
+    public float bloodAmount;
+    public float energyAmount;
     [SerializeField] private bool added = false;
+
 
     //No Gravity Constructor
     public Berry(string n, string desc, int i, int numM, int[] incomp)

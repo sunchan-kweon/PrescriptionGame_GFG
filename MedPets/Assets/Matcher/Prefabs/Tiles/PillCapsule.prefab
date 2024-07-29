@@ -102,6 +102,9 @@ MonoBehaviour:
   numToMatch: 3
   locX: 0
   locY: 0
+  foodAmount: 0
+  bloodAmount: -30
+  energyAmount: 0
   added: 0
 --- !u!114 &8446862416628447757
 MonoBehaviour:

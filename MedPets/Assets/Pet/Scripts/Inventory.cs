@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     public static int[] items;
-    private bool started = false;
+    private static bool started = false;
+    public bool isInventory;
+    public GameObject itemPrefab;
+    public BerryHolder holder;
 
 
     private void Start()
@@ -14,6 +18,10 @@ public class Inventory : MonoBehaviour
         {
             items = new int[BerryHolder.itemCount];
             started = true;
+        }
+        if (isInventory)
+        {
+            LoadItems();
         }
     }
 
@@ -31,43 +39,18 @@ public class Inventory : MonoBehaviour
             items[i] = data.items[i];
         }
     }
-    
-    /*
 
-    public void UseInsulin(){
-        if(insulin > 0){
-            insulin -= 1;
-            //NeedsController.ChangeHappiness(10);
-            NeedsController.ChangeBlood(-10);
-            SavePet();
+    public void LoadItems()
+    {
+        for(int i = 0; i < items.Length; i++)
+        {
+            if (items[i] != 0)
+            {
+                GameObject current = Instantiate(itemPrefab, gameObject.transform);
+                current.GetComponent<ItemController>().text.text += items[i];
+                current.GetComponent<ItemController>().button.sprite = holder.getBerry(i).GetComponent<Image>().sprite;
+                current.GetComponent<ItemController>().GetComponent<ConsumableUser>().item = holder.getBerry(i);
+            }
         }
     }
-
-    public void UseMetformin(){
-        if(metformin > 0){
-            metformin -= 1;
-            //NeedsController.ChangeEnergy(10);
-            NeedsController.ChangeBlood(-10);
-            SavePet();
-        }
-    }
-
-    public void UseCorn(){
-        if(corn > 0){
-            corn -= 1;
-            NeedsController.ChangeFood(10);
-            NeedsController.ChangeBlood(-10);
-            SavePet();
-        }
-    }
-
-    public void UseFlour(){
-        if(flour > 0){
-            flour -= 1;
-            NeedsController.ChangeFood(20);
-            NeedsController.ChangeBlood(10);
-            SavePet();
-        }
-    }
-    */
 }

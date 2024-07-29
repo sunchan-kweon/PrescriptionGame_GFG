@@ -9,24 +9,6 @@ public class PetUIController : MonoBehaviour
     public Slider bloodSliderImage;
     public Image energyImage;
 
-    public float maxSlider;
-    public float minSlider;
-
-    private void Start()
-    {
-
-    }
-
-    //public static PetUIController instance;
-
-    /*private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }*/
-
     public void UpdateFoodBar(float maxFood, float currentFood)
     {
         //Debug.Log(currentFood / maxFood);
