@@ -63,7 +63,7 @@ public class MainMenu : MonoBehaviour
     public void ToTutorial()
     {
         audioSource.Play();
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Tutorial(Old)");
     }
 
     //GUIDEBOOK STUFF

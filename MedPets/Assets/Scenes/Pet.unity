@@ -2373,7 +2373,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 220
   m_WholeNumbers: 0
-  m_Value: 2
+  m_Value: 220
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -11,19 +11,40 @@ public class PetUIController : MonoBehaviour
 
     public void UpdateFoodBar(float maxFood, float currentFood)
     {
-        //Debug.Log(currentFood / maxFood);
-        foodImage.fillAmount = currentFood / maxFood;
+        float result = currentFood / maxFood;
+        if(foodImage.fillAmount < result)
+        {
+            foodImage.fillAmount += 0.045f / maxFood;
+        }
+        else if (foodImage.fillAmount > result)
+        {
+            foodImage.fillAmount -= 0.045f / maxFood;
+        }
     }
 
     public void UpdateBloodBar(float currentBlood)
     {
-        //Debug.Log(currentHappiness / maxHappiness);
-        bloodSliderImage.value = currentBlood;
+        float result = currentBlood;
+        if (bloodSliderImage.value < result)
+        {
+            bloodSliderImage.value += 0.1f;
+        }
+        else if (bloodSliderImage.value > result)
+        {
+            bloodSliderImage.value -= 0.1f;
+        }
     }
 
     public void UpdateEnergyBar(float maxEnergy, float currentEnergy)
     {
-        //Debug.Log(currentEnergy / maxEnergy);
-        energyImage.fillAmount = currentEnergy / maxEnergy;
+        float result = currentEnergy / maxEnergy;
+        if(energyImage.fillAmount < result)
+        {
+            energyImage.fillAmount += 0.045f / maxEnergy;
+        }
+        else if (energyImage.fillAmount > result)
+        {
+            energyImage.fillAmount -= 0.045f / maxEnergy;
+        }
     }
 }
