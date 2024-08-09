@@ -7,6 +7,7 @@ public static class PatientInfo
     public static int medId = 0;
     public static string medAmount;
     public static int[] matcherIds;
+    public static List<int> medications = new List<int>();
     public static string time1;
     public static string time2;
 
@@ -25,6 +26,21 @@ public static class PatientInfo
     public static void setMatcherIds(int[] ids)
     {
         matcherIds = ids;
+    }
+
+    public static void addMedication(int id)
+    {
+        for(int i = 0; i < medications.Count; i++)
+        {
+            if (medications[i] == id)
+            {
+                medications.Remove(i);
+            }
+            else
+            {
+                medications.Add(id);
+            }
+        }
     }
 
     public static void setTime1(int t)
