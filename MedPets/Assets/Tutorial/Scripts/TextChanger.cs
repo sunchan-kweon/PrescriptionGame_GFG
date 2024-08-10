@@ -20,4 +20,13 @@ public class TextChanger : MonoBehaviour
             textPanel2.text = text2;
         }
     }
+
+    public void ReEvaluate()
+    {
+        textPanel.text = text;
+        if (hasMultiple)
+        {
+            textPanel2.text = text2;
+        }
+    }
 }

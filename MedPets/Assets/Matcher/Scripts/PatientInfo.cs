@@ -10,6 +10,8 @@ public static class PatientInfo
     public static List<int> medications = new List<int>();
     public static string time1;
     public static string time2;
+    public static string petName;
+    public static string dosage;
 
 
     public static void setId(int id)
