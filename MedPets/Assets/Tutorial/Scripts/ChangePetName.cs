@@ -8,6 +8,10 @@ public class ChangePetName : MonoBehaviour
     public void changePetName(string name)
     {
         PatientInfo.petName = name;
+        if(name.Equals("") || name.Equals(" "))
+        {
+            PatientInfo.petName = "PET NAME";
+        }
         Tutorial.nameChangeable = true;
     }
 }

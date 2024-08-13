@@ -15,25 +15,37 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = clickaudio;
+        if(audioSource != null)
+        {
+            audioSource = GetComponent<AudioSource>();
+            audioSource.clip = clickaudio;
+        }
     }
     
     public void ToTitle()
     {
-        audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         SceneManager.LoadScene("Title");
     }
 
     public void ToPet()
     {
-        audioSource.Play();
+        if(audioSource != null)
+        {
+            audioSource.Play();
+        }
         SceneManager.LoadScene("Pet");
     }
 
     public void ToPuzzle()
     {
-        audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         if (mask != null)
         {
             StartCoroutine(Fade());
@@ -50,38 +62,56 @@ public class MainMenu : MonoBehaviour
 
     public void ToSettings()
     {
-        audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         SceneManager.LoadScene("Settings");
     }
 
     public void ToInventory()
     {
-        audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         SceneManager.LoadScene("Inventory");
     }
 
     public void ToTutorial()
     {
-        audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         SceneManager.LoadScene("Tutorial(Old)");
     }
 
     //GUIDEBOOK STUFF
     public void ToGuidebook()
     {
-        audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         SceneManager.LoadScene("Guidebook");
     }
 
     public void ToMetformin()
     {
-        audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         SceneManager.LoadScene("Guide_Metformin");
     }
 
     public void ToInsulin()
     {
-        audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
         SceneManager.LoadScene("Guide_Insulin");
     }
 

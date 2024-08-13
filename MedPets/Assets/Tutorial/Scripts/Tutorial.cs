@@ -10,14 +10,15 @@ public class Tutorial : MonoBehaviour
     public GameObject parent;
     public RectTransform rect;
     public TextAsset tutorialScript;
-    private string[,] stringData;
+    public MainMenu mainMenu;
+    private string[,] script;
     public float speed;
 
 
     public int[] progression;
 
     public int language;
-    private int currentText;
+    private static int currentText;
 
     private int currentPanel;
     private int lastPanel;
@@ -38,11 +39,11 @@ public class Tutorial : MonoBehaviour
         for(int i = 0; i < progression.Length; i++)
         {
             panels.Add(Instantiate(prefabs[progression[i]], parent.transform));
-            panels[i].GetComponent<TextChanger>().text = stringData[currentText, language];
+            panels[i].GetComponent<TextChanger>().text = script[currentText, language];
             currentText++;
             if (panels[i].GetComponent<TextChanger>().hasMultiple)
             {
-                panels[i].GetComponent<TextChanger>().text2 = stringData[currentText, language];
+                panels[i].GetComponent<TextChanger>().text2 = script[currentText, language];
                 currentText++;
             }
         }
@@ -78,7 +79,7 @@ public class Tutorial : MonoBehaviour
         string[] currentData;
         
         currentData = tutorialScript.text.Split(new string[] { "\t", "\n"}, StringSplitOptions.RemoveEmptyEntries);
-        stringData = new string[(currentData.Length / languageCount) - languageCount + 1, languageCount];
+        script = new string[(currentData.Length / languageCount) - languageCount + 1, languageCount];
         for (int i = 0; i < currentData.Length; i++)
         {
             Debug.Log(currentData[i]);
@@ -88,15 +89,15 @@ public class Tutorial : MonoBehaviour
             for(int j = 0; j < languageCount; j++)
             {
                 Debug.Log(i + " " + (j) + " " + currentData[languageCount * (i + 1) + j]);
-                stringData[i, j] = currentData[languageCount * (i + 1) + j];
+                script[i, j] = currentData[languageCount * (i + 1) + j];
             }
         }
-        for(int i = 0; i < stringData.GetLength(0); i++)
+        for(int i = 0; i < script.GetLength(0); i++)
         {
             string test = "";
-            for(int j = 0; j < stringData.GetLength(1); j++)
+            for(int j = 0; j < script.GetLength(1); j++)
             {
-                test += (stringData[i, j] + ", ");
+                test += (script[i, j] + ", ");
             }
             Debug.Log(test);
         }
@@ -139,11 +140,15 @@ public class Tutorial : MonoBehaviour
     public void MoveRight()
     {
         Debug.Log(transform.childCount);
-        if(currentPanel != transform.childCount)
+        if(currentPanel != transform.childCount - 1)
         {
             lastPanel = currentPanel;
             currentPanel += 1;
             Move();
+        }
+        else
+        {
+            mainMenu.ToPet();
         }
         Debug.Log(currentLoc + " " + currentPanel + " " + lastPanel);
     }

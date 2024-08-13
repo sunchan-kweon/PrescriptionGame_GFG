@@ -9,9 +9,9 @@ public class CheckFirstTime : MonoBehaviour
     {
         if(NeedsController.playedOnce == false)
         {
-            NeedsController.food = 50;
-            NeedsController.blood = 110;
-            NeedsController.energy = 50;
+            NeedsController.food = 0;
+            NeedsController.blood = 200;
+            NeedsController.energy = 0;
         }
         NeedsController.playedOnce = true;
         SaveSystem.SavePet();

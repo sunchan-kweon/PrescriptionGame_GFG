@@ -16,7 +16,9 @@ public class NeedsController : MonoBehaviour
 
     public PetController controller;
     public GameObject playGlow;
-    public GameObject meterGlow;
+    public GameObject energyMeterGlow;
+    public GameObject foodMeterGlow;
+    public GameObject bloodMeterGlow;
 
     public void SavePet()
     {
@@ -46,15 +48,41 @@ public class NeedsController : MonoBehaviour
         if (food <= 20)
         {
             controller.Hungry();
+            if (foodMeterGlow != null)
+            {
+                foodMeterGlow.SetActive(true);
+            }
+        }
+        else
+        {
+            if (foodMeterGlow != null)
+            {
+                foodMeterGlow.SetActive(false);
+            }
         }
 
         if(blood < 80)
         {
             controller.Sad();
+            if(bloodMeterGlow != null)
+            {
+                bloodMeterGlow.SetActive(true);
+            }
         }
         else if(blood > 140)
         {
             controller.Sad();
+            if (bloodMeterGlow != null)
+            {
+                bloodMeterGlow.SetActive(true);
+            }
+        }
+        else
+        {
+            if (bloodMeterGlow != null)
+            {
+                bloodMeterGlow.SetActive(false);
+            }
         }
 
         if(energy <= 20)
@@ -64,9 +92,9 @@ public class NeedsController : MonoBehaviour
             {
                 playGlow.SetActive(true);
             }
-            if(meterGlow != null)
+            if(energyMeterGlow != null)
             {
-                meterGlow.SetActive(true);
+                energyMeterGlow.SetActive(true);
             }
             
         }
@@ -76,9 +104,9 @@ public class NeedsController : MonoBehaviour
             {
                 playGlow.SetActive(false);
             }
-            if (meterGlow != null)
+            if (energyMeterGlow != null)
             {
-                meterGlow.SetActive(false);
+                energyMeterGlow.SetActive(false);
             }
         }
 

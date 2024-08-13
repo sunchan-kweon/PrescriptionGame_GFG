@@ -8,7 +8,7 @@ public class DropdownBehavior : MonoBehaviour
     [SerializeField] Dropdown drop;
     [SerializeField] int time;
 
-    private void Update()
+    /*private void Update()
     {
         if (time == 2)
         {
@@ -18,6 +18,6 @@ public class DropdownBehavior : MonoBehaviour
         {
             PatientInfo.setTime1(drop.value);
         }
-    }
+    }*/
 
 }

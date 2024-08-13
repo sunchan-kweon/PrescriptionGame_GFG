@@ -12,6 +12,7 @@ public static class PatientInfo
     public static string time2;
     public static string petName;
     public static string dosage;
+    public static string time;
 
 
     public static void setId(int id)
@@ -30,6 +31,11 @@ public static class PatientInfo
         matcherIds = ids;
     }
 
+    public static void setTime(string t)
+    {
+        time = t;
+    }
+
     public static void addMedication(int id)
     {
         for(int i = 0; i < medications.Count; i++)
@@ -45,7 +51,7 @@ public static class PatientInfo
         }
     }
 
-    public static void setTime1(int t)
+    /*public static void setTime1(int t)
     {
         switch (t)
         {
@@ -93,6 +99,6 @@ public static class PatientInfo
             default:
                 time2 = "None"; break;
         }
-    }
+    }*/
 
 }
