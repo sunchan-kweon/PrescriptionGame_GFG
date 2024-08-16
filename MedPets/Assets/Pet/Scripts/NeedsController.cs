@@ -85,7 +85,7 @@ public class NeedsController : MonoBehaviour
             }
         }
 
-        if(energy <= 20)
+        if(energy <= 40)
         {
             controller.Bored();
             if(playGlow != null)
@@ -139,9 +139,9 @@ public class NeedsController : MonoBehaviour
         {
             blood = 0;
         }
-        else if (blood >= 100)
+        else if (blood >= 220)
         {
-            blood = 100;
+            blood = 220;
         }
 
     }
