@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     public GameObject mask;
     public GameObject maskPrefab;
     public RectTransform parent;
+    private static bool tutorialFinished;
     // public GameObject howtopanel;
     // public GameObject creditpanel;
 
@@ -38,6 +39,27 @@ public class MainMenu : MonoBehaviour
             audioSource.Play();
         }
         SceneManager.LoadScene("Pet");
+    }
+
+    public void ToTutorial()
+    {
+        if (!tutorialFinished)
+        {
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+            SceneManager.LoadScene("Tutorial");
+            tutorialFinished = true;
+        }
+        else
+        {
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+            SceneManager.LoadScene("Pet");
+        }
     }
 
     public void ToPuzzle()
@@ -76,15 +98,6 @@ public class MainMenu : MonoBehaviour
             audioSource.Play();
         }
         SceneManager.LoadScene("Inventory");
-    }
-
-    public void ToTutorial()
-    {
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }
-        SceneManager.LoadScene("Tutorial(Old)");
     }
 
     //GUIDEBOOK STUFF

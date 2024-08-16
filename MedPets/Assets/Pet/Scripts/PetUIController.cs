@@ -14,11 +14,11 @@ public class PetUIController : MonoBehaviour
         float result = currentFood / maxFood;
         if(foodImage.fillAmount < result)
         {
-            foodImage.fillAmount += 0.045f / maxFood;
+            foodImage.fillAmount += 0.045f * 6 / maxFood;
         }
         else if (foodImage.fillAmount > result)
         {
-            foodImage.fillAmount -= 0.045f / maxFood;
+            foodImage.fillAmount -= 0.045f * 6 / maxFood;
         }
     }
 
@@ -27,11 +27,11 @@ public class PetUIController : MonoBehaviour
         float result = currentBlood;
         if (bloodSliderImage.value < result)
         {
-            bloodSliderImage.value += 0.1f;
+            bloodSliderImage.value += 0.1f * 6;
         }
         else if (bloodSliderImage.value > result)
         {
-            bloodSliderImage.value -= 0.1f;
+            bloodSliderImage.value -= 0.1f * 6;
         }
     }
 
@@ -40,11 +40,11 @@ public class PetUIController : MonoBehaviour
         float result = currentEnergy / maxEnergy;
         if(energyImage.fillAmount < result)
         {
-            energyImage.fillAmount += 0.045f / maxEnergy;
+            energyImage.fillAmount += 0.045f * 6 / maxEnergy;
         }
         else if (energyImage.fillAmount > result)
         {
-            energyImage.fillAmount -= 0.045f / maxEnergy;
+            energyImage.fillAmount -= 0.045f * 6 / maxEnergy;
         }
     }
 }
