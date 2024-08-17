@@ -12,6 +12,7 @@ public class GameGrid : MonoBehaviour
     [SerializeField] BerryHolder holder;
     [SerializeField] BerryMover mover;
     [SerializeField] Transform parent;
+    [SerializeField] Progression progression;
     GameObject[,] board;
     [SerializeField] int width;
     [SerializeField] int height;
@@ -32,7 +33,7 @@ public class GameGrid : MonoBehaviour
     {
         //INITIAL SETUP FOR BOARD SIZE AND FILLING
         PatientInfo.setId(PatientInfo.medId);
-        berries = PatientInfo.matcherIds;
+        berries = progression.getProgression();
         board = new GameObject[width, height];
         fillBoard(berries);
     }

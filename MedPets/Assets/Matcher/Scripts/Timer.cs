@@ -70,6 +70,11 @@ public class Timer : MonoBehaviour
         
     }
 
+    public void EndTimer()
+    {
+        countdowntime = 0;
+    }
+
     public void Pause()
     {
         if(isPaused)

@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
     {
         if(started == false)
         {
-            items = new int[BerryHolder.itemCount];
+            items = new int[holder.getSize()];
             started = true;
         }
         if (isInventory)

@@ -28,13 +28,15 @@ public class Result : MonoBehaviour
     void Start()
     {
         posX = parent.localPosition.x;
-        results = new int[BerryHolder.itemCount];
+        results = new int[holder.getSize()];
         for (int i = 0; i < results.Length; i++)
         {
+            Debug.Log("outside");
             results[i] = DragBehavior.itemCounts[i] / 9;
             Inventory.items[i] += results[i];
             if (results[i] > 0)
             {
+                Debug.Log("inside");
                 maxPan++;
                 GameObject current = Instantiate(holder.getBerry(i), new Vector2(spawnX + (count * spacing), spawnY), Quaternion.identity, parent);
                 current.GetComponent<Berry>().enabled = false;
@@ -50,6 +52,7 @@ public class Result : MonoBehaviour
             }
         }
         scoretext.text = GameGrid.score.ToString("D6");
+        Progression.progressionCounter++;
 
         SaveSystem.SavePet();
     }

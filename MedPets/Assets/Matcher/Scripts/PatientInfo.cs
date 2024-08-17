@@ -31,6 +31,19 @@ public static class PatientInfo
         matcherIds = ids;
     }
 
+    public static int randomMed()
+    {
+        if (medications.Count != 0) 
+        {
+            return medications[Random.Range(0, PatientInfo.medications.Count)];
+        }
+        else
+        {
+            return 0;
+        }
+        
+    }
+
     public static void setTime(string t)
     {
         time = t;
@@ -38,6 +51,7 @@ public static class PatientInfo
 
     public static void addMedication(int id)
     {
+        
         for(int i = 0; i < medications.Count; i++)
         {
             if (medications[i] == id)

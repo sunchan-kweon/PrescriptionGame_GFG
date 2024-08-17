@@ -6,7 +6,11 @@ public class BerryHolder : MonoBehaviour
 {
     //Static Container that can be added to in the inspector when on an object
     [SerializeField] GameObject[] container;
-    public static int itemCount = 10;
+    public static int itemCount;
+    private void Awake()
+    {
+        itemCount = container.Length;
+    }
 
     //Method to get Berry by ID/position in the container
     public GameObject getBerry(int id)
