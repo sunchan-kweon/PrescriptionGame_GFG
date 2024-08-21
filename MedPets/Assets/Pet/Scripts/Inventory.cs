@@ -25,21 +25,6 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public static void SavePet()
-    {
-        SaveSystem.SavePet();
-    }
-
-    public static void LoadPet()
-    {
-        PetData data = SaveSystem.LoadPet();
-
-        for(int i = 0; i < items.Length;)
-        {
-            items[i] = data.items[i];
-        }
-    }
-
     public void LoadItems()
     {
         for(int i = 0; i < items.Length; i++)

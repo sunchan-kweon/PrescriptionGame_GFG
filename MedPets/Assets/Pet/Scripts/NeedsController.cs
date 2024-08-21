@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class NeedsController : MonoBehaviour
 {
-    public static int food;
-    public static int blood;
-    public static int energy;
+    public static float food;
+    public static float blood;
+    public static float energy;
     public static bool playedOnce;
 
     public PetUIController foodBar;
@@ -27,11 +27,7 @@ public class NeedsController : MonoBehaviour
 
     public void LoadPet()
     {
-        PetData data = SaveSystem.LoadPet();
-
-        food = data.food;
-        blood = data.blood;
-        energy = data.energy;
+        SaveSystem.LoadPet();
     }
 
     public void Update()
@@ -128,7 +124,7 @@ public class NeedsController : MonoBehaviour
         {
             food = 100;
         }
-        
+        SaveSystem.SavePet();
     }
 
     public static void ChangeBlood(int amount)
@@ -143,7 +139,7 @@ public class NeedsController : MonoBehaviour
         {
             blood = 220;
         }
-
+        SaveSystem.SavePet();
     }
 
     public static void ChangeEnergy(int amount)
@@ -158,6 +154,6 @@ public class NeedsController : MonoBehaviour
         {
             energy = 100;
         }
-
+        SaveSystem.SavePet();
     }
 }

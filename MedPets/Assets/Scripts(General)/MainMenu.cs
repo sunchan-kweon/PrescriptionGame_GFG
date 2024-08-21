@@ -10,7 +10,6 @@ public class MainMenu : MonoBehaviour
     public GameObject mask;
     public GameObject maskPrefab;
     public RectTransform parent;
-    private static bool tutorialFinished;
     // public GameObject howtopanel;
     // public GameObject creditpanel;
 
@@ -43,14 +42,14 @@ public class MainMenu : MonoBehaviour
 
     public void ToTutorial()
     {
-        if (!tutorialFinished)
+        SaveSystem.LoadPet();
+        if (!NeedsController.playedOnce)
         {
             if (audioSource != null)
             {
                 audioSource.Play();
             }
             SceneManager.LoadScene("Tutorial");
-            tutorialFinished = true;
         }
         else
         {

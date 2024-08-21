@@ -26,7 +26,7 @@ public class Progression : MonoBehaviour
             return new int[] { PatientInfo.randomMed(), 10, 3};
         }
 
-        return new int[] { PatientInfo.randomMed(), getIncrease(), getDecrease(), getNeutral()};
+        return new int[] { PatientInfo.randomMed(), getIncrease(), getDecrease(), getNeutral(), };
     }
 
     private int getIncrease()
@@ -67,4 +67,5 @@ public class Progression : MonoBehaviour
         }
         return neutrals[Random.Range(0, neutrals.Count)];
     }
+
 }

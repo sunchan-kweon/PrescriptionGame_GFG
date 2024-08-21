@@ -6,30 +6,55 @@ public static class SaveSystem
 {
     public static void SavePet()
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/pet.exe";
-        FileStream stream = new FileStream(path, FileMode.Create);
-
-        PetData data = new PetData();
-
-        formatter.Serialize(stream, data);
-        stream.Close();
+        PlayerPrefs.SetFloat("Blood", NeedsController.blood);
+        PlayerPrefs.SetFloat("Food", NeedsController.food);
+        PlayerPrefs.SetFloat("Energy", NeedsController.energy);
+        for(int i = 0; i < Inventory.items.Length; i++)
+        {
+            PlayerPrefs.SetInt("Item" + i, Inventory.items[i]);
+        }
+        PlayerPrefs.SetInt("Progression", Progression.progressionCounter);
+        SetBool("PetVisited", NeedsController.playedOnce);
+        PlayerPrefs.SetString("PetName", PatientInfo.petName);
+        PlayerPrefs.Save();
     }
 
-    public static PetData LoadPet(){
-        string path = Application.persistentDataPath + "/pet.exe";
-        if(File.Exists(path)){
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-
-            PetData data = formatter.Deserialize(stream) as PetData;
-            stream.Close();
-
-            return data;
+    public static void LoadPet()
+    {
+        NeedsController.blood = PlayerPrefs.GetFloat("Blood", NeedsController.blood);
+        NeedsController.food = PlayerPrefs.GetFloat("Food", NeedsController.food);
+        NeedsController.energy = PlayerPrefs.GetFloat("Energy", NeedsController.energy);
+        for (int i = 0; i < Inventory.items.Length; i++)
+        {
+            Inventory.items[i] = PlayerPrefs.GetInt("Item" + i, 0);
         }
-        else{
-            Debug.LogError("Save file not found in " + path);
-            return null;
+        Progression.progressionCounter = PlayerPrefs.GetInt("Progression", Progression.progressionCounter);
+        NeedsController.playedOnce = GetBool("PetVisited", NeedsController.playedOnce);
+        PatientInfo.petName = PlayerPrefs.GetString("PetName", PatientInfo.petName);
+    }
+
+    private static void SetBool(string name, bool value)
+    {
+        if (value)
+        {
+            PlayerPrefs.SetInt(name, 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt(name, 0);
         }
     }
+
+    private static bool GetBool(string name, bool dflt)
+    {
+        if (PlayerPrefs.GetInt(name, 0) == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 }

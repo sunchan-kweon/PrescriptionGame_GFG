@@ -15,13 +15,13 @@ public class PetData
 
 
     public PetData(){
-        food = NeedsController.food;
+        /*food = NeedsController.food;
         blood = NeedsController.blood;
         energy = NeedsController.energy;
         playedOnce = NeedsController.playedOnce;
         for(int i = 0; i < items.Length; i++)
         {
             items[i] = Inventory.items[i];
-        }
+        }*/
     }
 }

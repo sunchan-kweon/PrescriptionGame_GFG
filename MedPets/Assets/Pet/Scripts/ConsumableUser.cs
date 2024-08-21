@@ -20,6 +20,7 @@ public class ConsumableUser : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        SaveSystem.SavePet();
     }
 
 }
