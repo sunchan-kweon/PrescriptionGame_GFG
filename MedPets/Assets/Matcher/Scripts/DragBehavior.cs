@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class DragBehavior : MonoBehaviour
 {
-    public AudioClip rightaudio;
-    public AudioClip wrongaudio;
-    private AudioSource audioSource;
+    public AudioSource rightaudio;
+    public AudioSource wrongaudio;
+    //private AudioSource audioSource;
 
     public static int[] itemCounts;
 
@@ -32,7 +32,7 @@ public class DragBehavior : MonoBehaviour
     void Awake()
     {
         itemCounts = new int[BerryHolder.itemCount];
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -151,8 +151,8 @@ public class DragBehavior : MonoBehaviour
                 loc[i, 1] = dragged[i].GetComponent<Berry>().getY();
             }
             clearAdded();
-            audioSource.clip = rightaudio;
-            audioSource.Play();
+            //audioSource.clip = rightaudio;
+            rightaudio.Play();
             grid.addScore(dragged.Count * 100);
             int [] removed = grid.removeGroup(loc);
             int count = 0;
@@ -171,8 +171,8 @@ public class DragBehavior : MonoBehaviour
         else
         {
             clearAdded();
-            audioSource.clip = wrongaudio;
-            audioSource.Play();
+            //audioSource.clip = wrongaudio;
+            wrongaudio.Play();
         }
         clearAdded();
     }

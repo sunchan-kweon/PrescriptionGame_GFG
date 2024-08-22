@@ -3,7 +3,16 @@ guid: 2ab004669bac73441be89bdbffacc2ef
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - rightaudio: {instanceID: 0}
+  - wrongaudio: {fileID: 8300000, guid: 2dd23cc0db7a6a6478f88a42af9d0e08, type: 3}
+  - grid: {instanceID: 0}
+  - mover: {instanceID: 0}
+  - holder: {instanceID: 0}
+  - col: {instanceID: 0}
+  - line: {instanceID: 0}
+  - collectedPrefab: {instanceID: 0}
+  - parent: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
