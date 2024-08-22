@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour
     public GameObject finishText;
     public GameObject pausePanel;
     public GameObject resultsPanel;
+    public GameObject mouseDetector; 
 
     public bool isPaused = false;
     public GameGrid gameGrid;
@@ -63,6 +64,7 @@ public class Timer : MonoBehaviour
 
             if(countdowntime <= -3)
             {
+                mouseDetector.SetActive(false);
                 resultsPanel.SetActive(true);
             }
 
