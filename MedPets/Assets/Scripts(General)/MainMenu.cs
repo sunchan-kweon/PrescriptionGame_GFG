@@ -109,22 +109,13 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Guidebook");
     }
 
-    public void ToMetformin()
+    public void ToInfo()
     {
         if (audioSource != null)
         {
             audioSource.Play();
         }
-        SceneManager.LoadScene("Guide_Metformin");
-    }
-
-    public void ToInsulin()
-    {
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }
-        SceneManager.LoadScene("Guide_Insulin");
+        SceneManager.LoadScene("Guidebook Info");
     }
 
     IEnumerator Fade()
