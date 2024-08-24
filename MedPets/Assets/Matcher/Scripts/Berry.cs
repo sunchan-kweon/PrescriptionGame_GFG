@@ -7,6 +7,7 @@ public class Berry : MonoBehaviour
 {
     [SerializeField] new string name;
     [SerializeField] string description;
+    [SerializeField] string description2;
     //Make sure this is the Index in the Berry Holder script in BoardManager
     [SerializeField] int id;
     [SerializeField] string[] tags;
@@ -47,6 +48,11 @@ public class Berry : MonoBehaviour
     public string getDescription()
     {
         return description;
+    }
+
+    public string getDescription2()
+    {
+        return description2;
     }
 
     public int[] getIncomp()
