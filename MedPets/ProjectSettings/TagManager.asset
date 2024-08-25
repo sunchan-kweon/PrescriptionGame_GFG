@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Manager
   - Detector
+  - Pet
   layers:
   - Default
   - TransparentFX

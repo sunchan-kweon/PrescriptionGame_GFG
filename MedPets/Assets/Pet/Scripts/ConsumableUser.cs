@@ -6,9 +6,16 @@ public class ConsumableUser : MonoBehaviour
 {
     public GameObject item;
     public AudioSource audio;
+    public Animator petAnim;
+
+    private void Start()
+    {
+        petAnim = GameObject.FindGameObjectWithTag("Pet").GetComponent<Animator>();
+    }
 
     public void useItem()
     {
+        petAnim.SetTrigger("Eating");
         audio.Play();
         NeedsController.ChangeFood((int)item.GetComponent<Berry>().foodAmount);
         NeedsController.ChangeBlood((int)item.GetComponent<Berry>().bloodAmount);

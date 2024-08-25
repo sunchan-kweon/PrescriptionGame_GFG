@@ -301,10 +301,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPanel: {fileID: 4110583541275835852}
-  textPanel2: {fileID: 0}
+  textPanel2: {fileID: 5170215557603181070}
   text: 'Input your new pet''s name:'
   text2: 
-  hasMultiple: 0
+  hasMultiple: 1
 --- !u!1 &4943986125378357504
 GameObject:
   m_ObjectHideFlags: 0

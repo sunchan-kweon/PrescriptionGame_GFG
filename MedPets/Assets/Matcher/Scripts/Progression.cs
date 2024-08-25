@@ -6,27 +6,37 @@ public class Progression : MonoBehaviour
 {
     public static int progressionCounter;
     public BerryHolder holder;
-
+    public SetLanguageText progressionText;
+    public GameObject progressionPanel1;
+    public GameObject progressionPanel2;
+    public GameObject progressionPanel3;
+    public GameObject progressionPanel4;
     public int[] getProgression()
     {
         if(progressionCounter <= 0)
         {
+            progressionPanel1.SetActive(true);
             return new int[] { PatientInfo.randomMed(), 4 };
         }
         else if(progressionCounter <= 1)
         {
+            progressionPanel2.SetActive(true);
             return new int[] { PatientInfo.randomMed(), 4, 5 };
         }
         else if(progressionCounter <= 2)
         {
+            progressionPanel3.SetActive(true);
             return new int[] { PatientInfo.randomMed(), 4, 5, 3 };
         }
-        else if(progressionCounter <= 4)
+        else if(progressionCounter <= 3)
         {
+            progressionPanel4.SetActive(true);
             return new int[] { PatientInfo.randomMed(), 10, 3};
         }
-
-        return new int[] { PatientInfo.randomMed(), getIncrease(), getDecrease(), getNeutral(), };
+        else
+        {
+            return new int[] { PatientInfo.randomMed(), getIncrease(), getDecrease(), getNeutral()};
+        }
     }
 
     private int getIncrease()

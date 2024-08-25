@@ -21,6 +21,8 @@ public static class SaveSystem
         PlayerPrefs.SetInt("Progression", Progression.progressionCounter);
         SetBool("PetVisited", NeedsController.playedOnce);
         PlayerPrefs.SetString("PetName", PatientInfo.petName);
+        PlayerPrefs.SetInt("Language", Tutorial.language);
+        SaveScript();
         PlayerPrefs.Save();
     }
 
@@ -37,12 +39,14 @@ public static class SaveSystem
         Progression.progressionCounter = PlayerPrefs.GetInt("Progression", Progression.progressionCounter);
         NeedsController.playedOnce = GetBool("PetVisited", NeedsController.playedOnce);
         PatientInfo.petName = PlayerPrefs.GetString("PetName", PatientInfo.petName);
+        Tutorial.language = PlayerPrefs.GetInt("Language", Tutorial.language);
         for (int i = 0; i < medAmount; i++)
         {
             Debug.Log("Before Med" + i + " " + PlayerPrefs.GetInt("Med" + i, 0));
             PatientInfo.addMedication(PlayerPrefs.GetInt("Med" + i, 0));
             Debug.Log("After Med");
         }
+        LoadScript();
     }
 
     private static void SetBool(string name, bool value)
@@ -67,6 +71,39 @@ public static class SaveSystem
         {
             return false;
         }
+    }
+
+    private static void SaveScript()
+    {
+        PlayerPrefs.SetInt("ScriptLength", Tutorial.script.GetLength(0));
+        PlayerPrefs.SetInt("ScriptWidth", Tutorial.script.GetLength(1));
+        for (int i = 0; i < Tutorial.script.GetLength(0); i++)
+        {
+            for(int j = 0; j < Tutorial.script.GetLength(1); j++)
+            {
+                PlayerPrefs.SetString("Script" + i + "-" + j, Tutorial.script[i, j]);
+            }
+        }
+    }
+
+    private static void LoadScript()
+    {
+        if(PlayerPrefs.GetInt("ScriptLength", 0) != 0)
+        {
+            Tutorial.script = new string[PlayerPrefs.GetInt("ScriptLength", 0), PlayerPrefs.GetInt("ScriptWidth", 0)];
+            for (int i = 0; i < PlayerPrefs.GetInt("ScriptLength", 0); i++)
+            {
+                for (int j = 0; j < PlayerPrefs.GetInt("ScriptWidth", 0); j++)
+                {
+                    Tutorial.script[i, j] = PlayerPrefs.GetString("Script" + i + "-" + j, "N/A");
+                }
+            }
+        }
+    }
+
+    public static void Reset()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
 }

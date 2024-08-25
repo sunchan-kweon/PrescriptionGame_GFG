@@ -11,13 +11,13 @@ public class Tutorial : MonoBehaviour
     public RectTransform rect;
     public TextAsset tutorialScript;
     public MainMenu mainMenu;
-    private string[,] script;
+    public static string[,] script;
     public float speed;
 
 
     public int[] progression;
 
-    public int language;
+    public static int language;
     private static int currentText;
 
     private int currentPanel;
@@ -79,17 +79,17 @@ public class Tutorial : MonoBehaviour
         string[] currentData;
         
         currentData = tutorialScript.text.Split(new string[] { "\t", "\n"}, StringSplitOptions.RemoveEmptyEntries);
-        script = new string[(currentData.Length / languageCount) - languageCount + 1, languageCount];
+        script = new string[(currentData.Length / languageCount) - (languageCount * 2) + 2, languageCount];
         for (int i = 0; i < currentData.Length; i++)
         {
             Debug.Log(currentData[i]);
         }
-        for (int i = 0; i <= (currentData.Length / languageCount) - languageCount; i++)
+        for (int i = 0; i <= (currentData.Length / languageCount) - (languageCount * 2) + 1; i++)
         {
             for(int j = 0; j < languageCount; j++)
             {
-                Debug.Log(i + " " + (j) + " " + currentData[languageCount * (i + 1) + j]);
-                script[i, j] = currentData[languageCount * (i + 1) + j];
+                Debug.Log(i + " " + (j) + " " + currentData[languageCount * (i + languageCount) + j]);
+                script[i, j] = currentData[languageCount * (i + languageCount) + j];
             }
         }
         for(int i = 0; i < script.GetLength(0); i++)

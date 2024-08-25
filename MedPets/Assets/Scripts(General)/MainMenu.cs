@@ -40,7 +40,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Pet");
     }
 
-    public void ToTutorial()
+    public void ToLanguage()
     {
         SaveSystem.LoadPet();
         if (!NeedsController.playedOnce)
@@ -49,7 +49,7 @@ public class MainMenu : MonoBehaviour
             {
                 audioSource.Play();
             }
-            SceneManager.LoadScene("Tutorial");
+            SceneManager.LoadScene("Language");
         }
         else
         {
@@ -59,6 +59,15 @@ public class MainMenu : MonoBehaviour
             }
             SceneManager.LoadScene("Pet");
         }
+    }
+
+    public void ToTutorial()
+    {
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void ToPuzzle()
@@ -124,6 +133,16 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(2.1f);
         SceneManager.LoadScene("Matcher");
 
+    }
+
+    public void ResetData()
+    {
+        SaveSystem.Reset();
+    }
+
+    public void SetLanguage(int language)
+    {
+        Tutorial.language = language;
     }
 
     // public void Credits()
