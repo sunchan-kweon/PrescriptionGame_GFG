@@ -20,14 +20,10 @@ public class NeedsController : MonoBehaviour
     public GameObject foodMeterGlow;
     public GameObject bloodMeterGlow;
 
-    public void SavePet()
+    private void Start()
     {
+        playedOnce = true;
         SaveSystem.SavePet();
-    }
-
-    public void LoadPet()
-    {
-        SaveSystem.LoadPet();
     }
 
     public void Update()

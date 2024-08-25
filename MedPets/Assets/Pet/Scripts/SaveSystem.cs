@@ -13,6 +13,11 @@ public static class SaveSystem
         {
             PlayerPrefs.SetInt("Item" + i, Inventory.items[i]);
         }
+        for (int i = 0; i < PatientInfo.medications.Count; i++)
+        {
+            PlayerPrefs.SetInt("Med" + i, PatientInfo.medications[i]);
+        }
+        PlayerPrefs.SetInt("MedAmount", PatientInfo.medications.Count);
         PlayerPrefs.SetInt("Progression", Progression.progressionCounter);
         SetBool("PetVisited", NeedsController.playedOnce);
         PlayerPrefs.SetString("PetName", PatientInfo.petName);
@@ -28,9 +33,16 @@ public static class SaveSystem
         {
             Inventory.items[i] = PlayerPrefs.GetInt("Item" + i, 0);
         }
+        int medAmount = PlayerPrefs.GetInt("MedAmount", 0);
         Progression.progressionCounter = PlayerPrefs.GetInt("Progression", Progression.progressionCounter);
         NeedsController.playedOnce = GetBool("PetVisited", NeedsController.playedOnce);
         PatientInfo.petName = PlayerPrefs.GetString("PetName", PatientInfo.petName);
+        for (int i = 0; i < medAmount; i++)
+        {
+            Debug.Log("Before Med" + i + " " + PlayerPrefs.GetInt("Med" + i, 0));
+            PatientInfo.addMedication(PlayerPrefs.GetInt("Med" + i, 0));
+            Debug.Log("After Med");
+        }
     }
 
     private static void SetBool(string name, bool value)

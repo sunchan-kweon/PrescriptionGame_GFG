@@ -51,68 +51,28 @@ public static class PatientInfo
 
     public static void addMedication(int id)
     {
-        
+        bool changed = false;
         for(int i = 0; i < medications.Count; i++)
         {
             if (medications[i] == id)
             {
-                medications.Remove(i);
-            }
-            else
-            {
-                medications.Add(id);
+                medications.Remove(id);
+                Debug.Log("Removed " + id);
+                changed = true;
             }
         }
-    }
-
-    /*public static void setTime1(int t)
-    {
-        switch (t)
+        if(!changed)
         {
-            case 0:
-                time1 = "Before Each Meal"; break;
-            case 1:
-                time1 = "After Each Meal"; break;
-            case 2:
-                time1 = "Before Breakfast"; break;
-            case 3:
-                time1 = "After Breakfast"; break;
-            case 4:
-                time1 = "Before Lunch"; break;
-            case 5:
-                time1 = "After Lunch"; break;
-            case 6:
-                time1 = "Before Dinner"; break;
-            case 7:
-                time1 = "After Dinner"; break;
-            default:
-                time1 = "None"; break;
+            medications.Add(id);
+            Debug.Log("Added " + id);
         }
-    }
+        
 
-    public static void setTime2(int t)
-    {
-        switch (t)
+        for (int i = 0; i < medications.Count; i++)
         {
-            case 0:
-                time2 = "Before Each Meal"; break;
-            case 1:
-                time2 = "After Each Meal"; break;
-            case 2:
-                time2 = "Before Breakfast"; break;
-            case 3:
-                time2 = "After Breakfast"; break;
-            case 4:
-                time2 = "Before Lunch"; break;
-            case 5:
-                time2 = "After Lunch"; break;
-            case 6:
-                time2 = "Before Dinner"; break;
-            case 7:
-                time2 = "After Dinner"; break;
-            default:
-                time2 = "None"; break;
+            Debug.Log(medications[i] + " Spot " + i);
         }
-    }*/
 
+        SaveSystem.SavePet();
+    }
 }
