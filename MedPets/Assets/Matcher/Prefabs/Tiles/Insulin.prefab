@@ -92,9 +92,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Insulin
-  description: Insulin is a blah blah blah yada yada yada yipee yahoo!
-  description2: Uhh your pet starts to feel better if its blood sugar is too high
-    but feels bad if its blood sugar is too low
+  description: Insulin helps disperse glucose and lower your blood sugar levels!
+  description2: If your pet has eaten a lot of sugars or carbs, this can help lower
+    their blood sugar levels back down.
   id: 0
   tags:
   - Medication

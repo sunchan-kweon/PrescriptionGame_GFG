@@ -92,7 +92,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Pill
-  description: Pill
+  description: Pill helps lower your blood sugar levels!
+  description2: If your pet has eaten a lot of sugars or carbs, this can help lower
+    their blood sugar levels back down.
   id: 8
   tags:
   - Medication

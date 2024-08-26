@@ -7,6 +7,7 @@ TagManager:
   - Manager
   - Detector
   - Pet
+  - sfx
   layers:
   - Default
   - TransparentFX
