@@ -662,11 +662,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775293624}
   m_CullTransparentMesh: 1
---- !u!82 &869248872 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 7463661449714593655, guid: eb14eab0ca221fe4aaa666263b10c470, type: 3}
-  m_PrefabInstance: {fileID: 1579553616}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1052001896
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,7 +720,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6b841ad2985840249b55abab3d636ff2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: abb90187c7aec8c4ba146338441acea6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1356,7 +1351,7 @@ PrefabInstance:
     - target: {fileID: 7541106919324893073, guid: eb14eab0ca221fe4aaa666263b10c470, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 869248872}
+      objectReference: {fileID: 0}
     - target: {fileID: 7541106919324893073, guid: eb14eab0ca221fe4aaa666263b10c470, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1651,7 +1646,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1d9e7ba2a1d8d8840b84a42b14514253, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77f26e232156ea144bdd38206bc9fa4a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1759,7 +1754,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
