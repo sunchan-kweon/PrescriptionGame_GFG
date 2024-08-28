@@ -31,7 +31,7 @@ public class Tutorial : MonoBehaviour
 
     private void Start()
     {
-        currentName = "PET NAME";
+        currentName = "Fido";
         panels = new List<GameObject>();
         ReadCSV();
         lastPanel = 0;
