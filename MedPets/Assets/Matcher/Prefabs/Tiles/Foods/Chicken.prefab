@@ -94,7 +94,7 @@ MonoBehaviour:
   name: Chicken
   description: Chicken
   description2: 
-  id: 10
+  id: 9
   tags:
   - Food
   incompatibility: 
