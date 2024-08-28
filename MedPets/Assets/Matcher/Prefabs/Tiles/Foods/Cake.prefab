@@ -94,7 +94,7 @@ MonoBehaviour:
   name: Cake
   description: Cake
   description2: 
-  id: 7
+  id: 6
   tags:
   - Food
   incompatibility: 

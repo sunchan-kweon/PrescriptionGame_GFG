@@ -94,7 +94,7 @@ MonoBehaviour:
   name: Bean
   description: Bean
   description2: 
-  id: 9
+  id: 8
   tags:
   - Food
   incompatibility: 
