@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 651213880}
   - component: {fileID: 651213879}
   m_Layer: 5
-  m_Name: Pet Shadow
+  m_Name: Tutorial_Pet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -839,6 +839,7 @@ GameObject:
   - component: {fileID: 1775463157}
   - component: {fileID: 1775463159}
   - component: {fileID: 1775463158}
+  - component: {fileID: 1775463160}
   m_Layer: 5
   m_Name: Pet
   m_TagString: Untagged
@@ -903,6 +904,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775463156}
   m_CullTransparentMesh: 1
+--- !u!95 &1775463160
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775463156}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5bf9cc82cdf21b64e98721a16146f0ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1837439934
 GameObject:
   m_ObjectHideFlags: 0

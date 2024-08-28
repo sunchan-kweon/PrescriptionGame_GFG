@@ -16,22 +16,22 @@ public class Progression : MonoBehaviour
         if(progressionCounter <= 0)
         {
             progressionPanel1.SetActive(true);
-            return new int[] { PatientInfo.randomMed(), 4 };
+            return new int[] { PatientInfo.randomMed(), getNeutral()};
         }
         else if(progressionCounter <= 1)
         {
             progressionPanel2.SetActive(true);
-            return new int[] { PatientInfo.randomMed(), 4, 5 };
+            return new int[] { PatientInfo.randomMed(), getNeutral(), getDecrease()};
         }
         else if(progressionCounter <= 2)
         {
             progressionPanel3.SetActive(true);
-            return new int[] { PatientInfo.randomMed(), 4, 5, 3 };
+            return new int[] { PatientInfo.randomMed(), getIncrease(), getDecrease(), getNeutral()};
         }
         else if(progressionCounter <= 3)
         {
             progressionPanel4.SetActive(true);
-            return new int[] { PatientInfo.randomMed(), 10, 3};
+            return new int[] { PatientInfo.randomMed(), 5, getNeutral()};
         }
         else
         {
@@ -44,7 +44,7 @@ public class Progression : MonoBehaviour
         List<int> increases = new List<int>();
         for(int i = 0; i < holder.getSize(); i++)
         {
-            if (holder.getBerry(i).GetComponent<Berry>().bloodAmount > 0 || holder.getBerry(i).GetComponent<Berry>().getTags()[0].Equals("Food"))
+            if (holder.getBerry(i).GetComponent<Berry>().bloodAmount > 0 && holder.getBerry(i).GetComponent<Berry>().getTags()[0].Equals("Food"))
             {
                 increases.Add(holder.getBerry(i).GetComponent<Berry>().getId());
             }
@@ -57,7 +57,7 @@ public class Progression : MonoBehaviour
         List<int> decreases = new List<int>();
         for (int i = 0; i < holder.getSize(); i++)
         {
-            if (holder.getBerry(i).GetComponent<Berry>().bloodAmount < 0 || holder.getBerry(i).GetComponent<Berry>().getTags()[0].Equals("Food"))
+            if (holder.getBerry(i).GetComponent<Berry>().bloodAmount < 0 && holder.getBerry(i).GetComponent<Berry>().getTags()[0].Equals("Food"))
             {
                 decreases.Add(holder.getBerry(i).GetComponent<Berry>().getId());
             }
@@ -70,7 +70,7 @@ public class Progression : MonoBehaviour
         List<int> neutrals = new List<int>();
         for (int i = 0; i < holder.getSize(); i++)
         {
-            if (holder.getBerry(i).GetComponent<Berry>().bloodAmount == 0 || holder.getBerry(i).GetComponent<Berry>().getTags()[0].Equals("Food"))
+            if (holder.getBerry(i).GetComponent<Berry>().bloodAmount == 0 && holder.getBerry(i).GetComponent<Berry>().getTags()[0].Equals("Food"))
             {
                 neutrals.Add(holder.getBerry(i).GetComponent<Berry>().getId());
             }

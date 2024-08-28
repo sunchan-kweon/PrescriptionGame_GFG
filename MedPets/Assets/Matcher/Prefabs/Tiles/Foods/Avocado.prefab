@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6237012540425933604}
   - component: {fileID: 9006150796552845294}
   m_Layer: 5
-  m_Name: Chicken
+  m_Name: Avocado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fbba5f270ae11ad45827c0d1c683f5f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d11089be199c684c8bb55618b7fb925, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -91,9 +91,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bdb50dcd8e22974ea5752835aa3e334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Chicken
-  description: Chicken
-  id: 7
+  name: Avocado
+  description: Avocado
+  description2: 
+  id: 8
   tags:
   - Food
   incompatibility: 
@@ -102,7 +103,7 @@ MonoBehaviour:
   numToMatch: 3
   locX: 0
   locY: 0
-  foodAmount: 30
+  foodAmount: 20
   bloodAmount: 0
   energyAmount: 0
   added: 0

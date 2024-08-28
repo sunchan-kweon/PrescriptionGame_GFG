@@ -5,7 +5,7 @@ using UnityEngine;
 public class ConsumableUser : MonoBehaviour
 {
     public GameObject item;
-    public AudioSource audio;
+    //public AudioSource audio;
     public Animator petAnim;
 
     private void Start()
@@ -16,7 +16,7 @@ public class ConsumableUser : MonoBehaviour
     public void useItem()
     {
         petAnim.SetTrigger("Eating");
-        audio.Play();
+        //audio.Play();
         NeedsController.ChangeFood((int)item.GetComponent<Berry>().foodAmount);
         NeedsController.ChangeBlood((int)item.GetComponent<Berry>().bloodAmount);
         NeedsController.ChangeEnergy((int)item.GetComponent<Berry>().energyAmount);
