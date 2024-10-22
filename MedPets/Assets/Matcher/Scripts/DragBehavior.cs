@@ -128,7 +128,7 @@ public class DragBehavior : MonoBehaviour
                     }
                 }
             }
-            if(chains < 2)
+            if(chains < 1)
             {
                 return -1;
             }

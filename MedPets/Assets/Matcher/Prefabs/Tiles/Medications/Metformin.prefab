@@ -233,9 +233,8 @@ MonoBehaviour:
   id: 1
   tags:
   - Medication
-  incompatibility: 00000000
-  requiredTags:
-  - Food
+  incompatibility: 
+  requiredTags: []
   doesGravity: 1
   numToMatch: 3
   locX: 0

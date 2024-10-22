@@ -98,9 +98,8 @@ MonoBehaviour:
   id: 0
   tags:
   - Medication
-  incompatibility: 01000000
-  requiredTags:
-  - Food
+  incompatibility: 
+  requiredTags: []
   doesGravity: 1
   numToMatch: 3
   locX: 0
