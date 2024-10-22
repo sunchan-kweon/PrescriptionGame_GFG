@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 387970126697480748}
   - component: {fileID: 2140011633904886813}
   m_Layer: 5
-  m_Name: Glipizida
+  m_Name: Glipizide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,8 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bdb50dcd8e22974ea5752835aa3e334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: GlipiZIDA
-  description: GlipiZIDA helps lower your blood sugar levels!!
+  name: GlipiZide
+  description: GlipiZide helps lower your blood sugar levels!!
   description2: If your pet has eaten a lot of sugars or carbs, this can help lower
     their blood sugar levels back down.
   id: 2

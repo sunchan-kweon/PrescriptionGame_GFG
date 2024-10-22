@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GlipiZIDA
+  m_text: GlipiZide
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e27ed57d4ab4afc4db622ee715aa10ea, type: 2}
   m_sharedMaterial: {fileID: -2342194830528103053, guid: e27ed57d4ab4afc4db622ee715aa10ea, type: 2}
@@ -1247,7 +1247,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Glimepirida
+  m_text: Glimepiride
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e27ed57d4ab4afc4db622ee715aa10ea, type: 2}
   m_sharedMaterial: {fileID: -2342194830528103053, guid: e27ed57d4ab4afc4db622ee715aa10ea, type: 2}

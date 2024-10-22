@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6237012540425933604}
   - component: {fileID: 9006150796552845294}
   m_Layer: 5
-  m_Name: Glimepirida
+  m_Name: Glimepiride
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bdb50dcd8e22974ea5752835aa3e334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Glimepirida
-  description: Glimepirida helps lower your blood sugar levels!
+  name: Glimepiride
+  description: Glimepiride helps lower your blood sugar levels!
   description2: If your pet has eaten a lot of sugars or carbs, this can help lower
     their blood sugar levels back down.
   id: 3
