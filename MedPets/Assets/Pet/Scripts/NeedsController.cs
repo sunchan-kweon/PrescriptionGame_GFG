@@ -53,6 +53,11 @@ public class NeedsController : MonoBehaviour
             }
         }
 
+        if(food < 0)
+        {
+            food = 0;
+        }
+
         if(blood < 80)
         {
             controller.Sad();
