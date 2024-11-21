@@ -16,7 +16,7 @@ public class Progression : MonoBehaviour
         if(progressionCounter <= 0)
         {
             progressionPanel1.SetActive(true);
-            return new int[] { PatientInfo.randomMed(), getNeutral()};
+            return new int[] { PatientInfo.randomMed(), getIncrease()};
         }
         else if(progressionCounter <= 1)
         {
