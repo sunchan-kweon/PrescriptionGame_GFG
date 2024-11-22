@@ -11,7 +11,7 @@ public class CheckFirstTime : MonoBehaviour
     {
         if(NeedsController.playedOnce == false)
         {
-            NeedsController.food = 0;
+            NeedsController.food = 75;
             NeedsController.blood = 200;
             NeedsController.energy = 0;
             tutorialBox.SetActive(true);
