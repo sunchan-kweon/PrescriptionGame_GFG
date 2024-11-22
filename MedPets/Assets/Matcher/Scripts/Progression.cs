@@ -21,18 +21,18 @@ public class Progression : MonoBehaviour
         else if(progressionCounter <= 1)
         {
             progressionPanel2.SetActive(true);
-            return new int[] { PatientInfo.randomMed(), getNeutral(), getDecrease()};
+            return new int[] { PatientInfo.randomMed(), getIncrease(), getDecrease()};
         }
         else if(progressionCounter <= 2)
         {
             progressionPanel3.SetActive(true);
             return new int[] { PatientInfo.randomMed(), getIncrease(), getDecrease(), getNeutral()};
         }
-        else if(progressionCounter <= 3)
+        /*else if(progressionCounter <= 3)
         {
             progressionPanel4.SetActive(true);
             return new int[] { PatientInfo.randomMed(), 5, getNeutral()};
-        }
+        }*/
         else
         {
             return new int[] { PatientInfo.randomMed(), getIncrease(), getDecrease(), getNeutral()};
