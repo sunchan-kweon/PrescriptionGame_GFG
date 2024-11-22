@@ -60,7 +60,7 @@ public class NeedsController : MonoBehaviour
 
         if(blood < 80)
         {
-            controller.Sad();
+            controller.LowBloodSugar();
             if(bloodMeterGlow != null)
             {
                 bloodMeterGlow.SetActive(true);
@@ -68,7 +68,7 @@ public class NeedsController : MonoBehaviour
         }
         else if(blood > 140)
         {
-            controller.Sad();
+            controller.HighBloodSugar();
             if (bloodMeterGlow != null)
             {
                 bloodMeterGlow.SetActive(true);

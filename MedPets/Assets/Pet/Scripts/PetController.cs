@@ -24,4 +24,12 @@ public class PetController : MonoBehaviour
     {
         petAnimator.SetTrigger("Hungry");
     }
+    public void LowBloodSugar()
+    {
+        petAnimator.SetTrigger("LowBloodSugar");
+    }
+    public void HighBloodSugar()
+    {
+        petAnimator.SetTrigger("HighBloodSugar");
+    }
 }
