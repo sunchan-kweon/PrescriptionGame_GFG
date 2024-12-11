@@ -1676,8 +1676,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Oh No! That's not good! Lets go for a walk to get some food, medicine,
-    and good ol' excercise!
+  m_text: Play the matching game to give your pet some exercise, gather medicine,
+    and food!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e27ed57d4ab4afc4db622ee715aa10ea, type: 2}
   m_sharedMaterial: {fileID: -2342194830528103053, guid: e27ed57d4ab4afc4db622ee715aa10ea, type: 2}
@@ -1766,7 +1766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689f1a0037f2b6945b197a2c564da195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textLine: 44
+  textLine: 28
   textToChange: {fileID: 783088287}
 --- !u!1 &904730268
 GameObject:
