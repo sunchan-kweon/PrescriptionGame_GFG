@@ -4844,7 +4844,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5863243937038634325, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
       propertyPath: textLine
-      value: 41
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6619645133687956023, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
       propertyPath: m_Pivot.x
@@ -5241,7 +5241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5863243937038634325, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
       propertyPath: textLine
-      value: 42
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 6619645133687956023, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
       propertyPath: m_Pivot.x
@@ -5961,7 +5961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5863243937038634325, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
       propertyPath: textLine
-      value: 40
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 6489729922002759122, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
       propertyPath: m_AnchorMax.x
