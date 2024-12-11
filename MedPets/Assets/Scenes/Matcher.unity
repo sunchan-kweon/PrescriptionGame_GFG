@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689f1a0037f2b6945b197a2c564da195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textLine: 48
+  textLine: 32
   textToChange: {fileID: 72778444}
 --- !u!1 &91351897
 GameObject:
@@ -714,7 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689f1a0037f2b6945b197a2c564da195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textLine: 50
+  textLine: 33
   textToChange: {fileID: 145695573}
 --- !u!114 &145695573
 MonoBehaviour:
@@ -2642,7 +2642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689f1a0037f2b6945b197a2c564da195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textLine: 50
+  textLine: 34
   textToChange: {fileID: 708464368}
 --- !u!1 &833539793
 GameObject:
@@ -3226,7 +3226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689f1a0037f2b6945b197a2c564da195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textLine: 46
+  textLine: 30
   textToChange: {fileID: 951711915}
 --- !u!1 &952110331
 GameObject:
@@ -3375,7 +3375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 689f1a0037f2b6945b197a2c564da195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textLine: 52
+  textLine: 36
   textToChange: {fileID: 952110333}
 --- !u!1 &1105324591
 GameObject:
@@ -4844,7 +4844,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5863243937038634325, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
       propertyPath: textLine
-      value: 59
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 6619645133687956023, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
       propertyPath: m_Pivot.x
@@ -5241,7 +5241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5863243937038634325, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
       propertyPath: textLine
-      value: 60
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 6619645133687956023, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
       propertyPath: m_Pivot.x
@@ -5958,6 +5958,34 @@ PrefabInstance:
     - target: {fileID: 5552522432108534477, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
       propertyPath: m_VerticalAlignment
       value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 5863243937038634325, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
+      propertyPath: textLine
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489729922002759122, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489729922002759122, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489729922002759122, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489729922002759122, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489729922002759122, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489729922002759122, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6619645133687956023, guid: 80afb2051f7072b41b9bfbe8080a1c34, type: 3}
       propertyPath: m_Pivot.x
