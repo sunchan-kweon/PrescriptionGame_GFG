@@ -230,6 +230,7 @@ MonoBehaviour:
   description: Metformin helps lower your blood sugar levels!
   description2: If your pet has eaten a lot of sugars or carbs, this can help lower
     their blood sugar levels back down.
+  descriptionTextLines: 390000003a000000
   id: 1
   tags:
   - Medication

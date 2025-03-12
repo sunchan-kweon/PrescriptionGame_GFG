@@ -8,6 +8,8 @@ public class Berry : MonoBehaviour
     [SerializeField] new string name;
     [SerializeField] string description;
     [SerializeField] string description2;
+
+    [SerializeField] int[] descriptionTextLines;
     //Make sure this is the Index in the Berry Holder script in BoardManager
     [SerializeField] int id;
     [SerializeField] string[] tags;
@@ -47,12 +49,12 @@ public class Berry : MonoBehaviour
 
     public string getDescription()
     {
-        return description;
+        return Tutorial.script[descriptionTextLines[0] - 3, Tutorial.language];
     }
 
     public string getDescription2()
     {
-        return description2;
+        return Tutorial.script[descriptionTextLines[1] - 3, Tutorial.language];
     }
 
     public int[] getIncomp()
