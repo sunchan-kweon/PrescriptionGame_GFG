@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class Berry : MonoBehaviour
 {
     [SerializeField] new string name;
-    [SerializeField] string description;
-    [SerializeField] string description2;
+    //[SerializeField] string description;
+    //[SerializeField] string description2;
 
     [SerializeField] int[] descriptionTextLines;
     //Make sure this is the Index in the Berry Holder script in BoardManager
@@ -30,7 +30,7 @@ public class Berry : MonoBehaviour
     public Berry(string n, string desc, int i, int numM, int[] incomp)
     {
         name = n;
-        description = desc;
+        //description = desc;
         id = i;
         incompatibility = incomp;
         numToMatch = numM;
